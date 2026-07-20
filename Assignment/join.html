@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LettuceBeFit – Join the Team</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- External CSS -->
+  <link href="navbar.css" rel="stylesheet" />
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    /* ─── THEME TOKENS MATCHED TO HOME/COMMUNITY ─── */
+    :root {
+      --bg:        #1c1c1c;
+      --bg-card:   #252525;
+      --bg-section:#222222;
+      --border:    #2e2e2e;
+      --text:      #f2f2f2;
+      --accent:    #a1ea93;
+      --accent-dim:#6bb860;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── FORM & COMPONENT STYLING ─── */
+    .form-container-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .form-control, .form-select {
+      background-color: #1a1a1a !important;
+      border: 1px solid var(--border) !important;
+      color: var(--text) !important;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 8px rgba(161,234,147,0.2) !important;
+    }
+
+    .form-check-input {
+      background-color: #1a1a1a;
+      border: 1px solid var(--border);
+    }
+
+    .form-check-input:checked {
+      background-color: var(--accent) !important;
+      border-color: var(--accent) !important;
+    }
+
+    /* ─── RESPONSE PAGE STYLING ─── */
+    .response-card {
+      background: linear-gradient(145deg, #252525, #1e1e1e);
+      border: 1px solid var(--accent-dim);
+      border-radius: 12px;
+      padding: 3.5rem 2.5rem;
+    }
+
+    .data-summary-box {
+      background: #1a1a1a;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .summary-item {
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 0;
+    }
+    .summary-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Animation utility */
+    .fade-in-up {
+      animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ZONE 0: MAIN NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+        <span class="text-accent">Lettuce</span>BeFit
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="workouts.html">Workouts</a></li>
+          <li class="nav-item"><a class="nav-link" href="calorie-calc.html">Calorie Calculator</a></li>
+        </ul>
+        <div class="d-flex">
+          <a class="btn btn-cta active" href="join.html">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5 py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- ZONE 1: THE INPUT FORM  -->
+        <section id="formSection" class="fade-in-up">
+          <div class="text-center mb-4">
+            <p class="section-label">Account Setup</p>
+            <h1 class="text-uppercase display-5 fw-bold">Create Your Athlete Profile</h1>
+            <p class="text mx-auto" style="max-width: 500px;">Set your training preferences below to be automatically synced with matching accountability groups.</p>
+          </div>
+
+          <div class="form-container-box">
+            <form id="joinForm" novalidate>
+              
+              <!-- Row 1: Basic Info -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label small text-uppercase fw-bold tracking-wider">Full Name</label>
+                  <input type="text" class="form-control form-control-lg" id="fullName" placeholder="e.g. Jaden M." required />
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label small text-uppercase fw-bold tracking-wider">Email Address</label>
+                  <input type="email" class="form-control form-control-lg" id="email" placeholder="name@example.com" required />
+                  <div class="invalid-feedback">Please provide a valid email address.</div>
+                </div>
+              </div>
+
+              <!-- Row 2: Selector Menus -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="fitnessGoal" class="form-label small text-uppercase fw-semibold tracking-wider">Primary Physique Goal</label>
+                  <select class="form-select form-select-lg" id="fitnessGoal" required>
+                    <option value="" selected disabled>Choose path...</option>
+                    <option value="Hypertrophy Block (Build Muscle)">Build Muscle</option>
+                    <option value="Power & Strength Split (Gain Power)">Gain Power</option>
+                    <option value="Body Recomposition (Lose Fat & Tone)">Lose Fat & Tone</option>
+                  </select>
+                  <div class="invalid-feedback">Please select your primary training path.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small text-uppercase fw-semibold tracking-wider d-block">Experience Level</label>
+                  <div class="pt-2">
+                    <div class="form-check form-check-inline me-3">
+                      <input class="form-check-input" type="radio" name="experience" id="expBeginner" value="Beginner (< 1 Year)" checked />
+                      <label class="form-check-label" for="expBeginner">Beginner</label>
+                    </div>
+                    <div class="form-check form-check-inline me-3">
+                      <input class="form-check-input" type="radio" name="experience" id="expIntermediate" value="Intermediate (1-3 Years)" />
+                      <label class="form-check-label" for="expIntermediate">Intermediate</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="experience" id="expAdvanced" value="Advanced (3+ Years)" />
+                      <label class="form-check-label" for="expAdvanced">Advanced</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 3: Checkboxes linked to Schedule metrics -->
+              <div class="mb-4">
+                <label class="form-label small text-uppercase fw-semibold tracking-wider d-block mb-2">Select Training Blocks to Focus</label>
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <div class="form-check p-3 border rounded" style="border-color: var(--border) !important; background: #1a1a1a;">
+                      <input class="form-check-input ms-0 me-2" type="checkbox" name="sessions" value="Heavy Compound Power Hour" id="sess1" />
+                      <label class="form-check-label small" for="sess1">Upper Body</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check p-3 border rounded" style="border-color: var(--border) !important; background: #1a1a1a;">
+                      <input class="form-check-input ms-0 me-2" type="checkbox" name="sessions" value="Hypertrophy Pacing Audit" id="sess2" />
+                      <label class="form-check-label small" for="sess2">Lower Body</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-cta w-100 py-3 text-uppercase fs-5 mt-2">Initialize Profile Data &rarr;</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- ZONE 2: THE RESPONSE PAGE VIEW (Dynamically Shown via DOM)-->
+
+        <!-- ZONE 2: THE RESPONSE PAGE VIEW (Updated with Discord & Email)-->
+<section id="responseSection" class="d-none fade-in-up">
+  <div class="response-card text-center">
+    <div class="mb-3">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+        <polyline points="22 4 12 14.01 9 11.01"/>
+      </svg>
+    </div>
+    
+    <h2 class="text-uppercase display-6 text-accent mb-2">Profile Activated Successfully!</h2>
+    <p class="text mb-4">
+      Welcome message to our community is sent to your email: <br>
+      <strong id="dispatchedEmail" class="text-white"></strong>
+    </p>
+
+    <!-- Rendered Dynamic Form Data Presentation Box -->
+    <div class="data-summary-box text-start mb-4">
+      <div class="summary-item d-flex justify-content-between">
+        <span class="text fw-medium">Registered Athlete:</span>
+        <span id="resName" class="fw-bold text-white"></span>
+      </div>
+      <div class="summary-item d-flex justify-content-between">
+        <span class="text fw-medium">Assigned Plan:</span>
+        <span id="resGoal" class="text-accent fw-semibold"></span>
+      </div>
+      <div class="summary-item d-flex justify-content-between">
+        <span class="text fw-medium">Experience Tier Profile:</span>
+        <span id="resExp" class="text-white"></span>
+      </div>
+    </div>
+
+    <div class="p-4 mb-4 rounded border text-start" style="background: #2f3136; border-color: #5865F2 !important;">
+      <div class="d-flex align-items-center gap-3 mb-2">
+        <!-- Discord Icon Iconography -->
+        <svg width="64" height="64" viewBox="0 0 127 96" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a74.37,74.37,0,0,0,6.72-10.93,68.6,68.6,0,0,1-10.64-5.12c.91-.67,1.81-1.37,2.67-2.1a75.22,75.22,0,0,0,72.6,0c.86.73,1.76,1.43,2.67,2.1a68.86,68.86,0,0,1-10.64,5.12,74.74,74.74,0,0,0,6.72,10.93,105.73,105.73,0,0,0,31.05-18.83C130.1,49.22,123.33,26.47,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.92,46,53.7,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.16,46,95.94,53,91,65.69,84.69,65.69Z"/>
+        </svg>
+
+        <h4 class="text-white mb-0 text-uppercase fw-bold" style="letter-spacing: 0.05em;">Instant Join </h4>
+      </div>
+      <!-- Insert your actual Discord invite link in the href below -->
+      <a href="https://discord.gg/2Jd53vp8ZU" target="_blank" class="btn w-100 fw-bold text-white text-uppercase py-2" style="background-color: #5865F2; border: none; font-size: 0.85rem; letter-spacing: 0.05em;">
+        Join LettuceBeFit Discord Server &rarr;
+      </a>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+      <a href="index.html" class="btn btn-outline-light px-4" style="border-color: var(--border);">Go to Live Schedule</a>
+      <a href="index.html" class="btn btn-cta px-4">Return to Home</a>
+    </div>
+  </div>
+</section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ZONE 3: FOOTER-->
+  <footer style="background: #111; border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.8rem;">
+    <div class="container">
+      <p class="mb-1"><span style="color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit &copy; 2026</p>
+      <p class="mb-0" style="font-size:0.75rem; color: var(--muted) !important;">Always consult a qualified professional before starting a new training programme.</p>
+    </div>
+  </footer>
+<!--   ZONE 4: DOM FORM -->
+<script>
+  // --- 2. LOAD DATA ON PAGE LOAD ---
+  // When the page loads, check if we have saved data and automatically show the response
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedData = localStorage.getItem('fitnessFormData');
+    
+    if (savedData) {
+      const data = JSON.parse(savedData);
+      
+      // Inject the saved data back into the response layout
+      document.getElementById('resName').innerText = data.name;
+      document.getElementById('dispatchedEmail').innerText = data.email;
+      document.getElementById('resGoal').innerText = data.goal;
+      document.getElementById('resExp').innerText = data.experience;
+
+      // Swap the interface layout instantly (skip animation on load)
+      document.getElementById('formSection').classList.add('d-none');
+      document.getElementById('responseSection').classList.remove('d-none');
+    }
+  });
+
+  // --- 1. SAVE DATA ON SUBMIT ---
+  document.getElementById('joinForm').addEventListener('submit', function (event) {
+    // Prevent standard server-side refresh redirects
+    event.preventDefault();
+    
+    const form = event.currentTarget;
+
+    // Execute Bootstrap built-in programmatic validation verification
+    if (!form.checkValidity()) {
+      event.stopPropagation();
+      form.classList.add('was-validated');
+      return;
+    }
+
+    // Extract form node input parameters via standard structural DOM selectors
+    const nameValue = document.getElementById('fullName').value;
+    const emailValue = document.getElementById('email').value;
+    const goalValue = document.getElementById('fitnessGoal').value;
+    const experienceValue = document.querySelector('input[name="experience"]:checked').value;
+
+    // Package the data into a clean object
+    const formData = {
+      name: nameValue,
+      email: emailValue,
+      goal: goalValue,
+      experience: experienceValue
+    };
+
+    // Save the object as a string into localStorage
+    localStorage.setItem('fitnessFormData', JSON.stringify(formData));
+
+    // Structural UI Mapping Matrix: Update response template nodes via innerText DOM layout
+    document.getElementById('resName').innerText = nameValue;
+    document.getElementById('dispatchedEmail').innerText = emailValue; 
+    document.getElementById('resGoal').innerText = goalValue;
+    document.getElementById('resExp').innerText = experienceValue;
+
+    // Execute dynamic swap interface layout transitions cleanly
+    document.getElementById('formSection').classList.add('d-none');
+    document.getElementById('responseSection').classList.remove('d-none');
+    
+    // Auto scroll viewport container to focal reset tracking coordinates smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>

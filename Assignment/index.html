@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LettuceBeFit – Forge Your Ideal Physique</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- External css -->
+  <link href = "navbar.css" rel = "stylesheet" />
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <style>
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      background: 
+        linear-gradient(rgba(17, 17, 17, 0.75), rgba(17, 17, 17, 0.85)), /* Dark tint for readable text */
+        radial-gradient(ellipse 60% 50% at 80% 0%, rgba(161,234,147,0.08), transparent 70%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0 2px, transparent 2px 40px),
+        url('images/fakejaydon.jpg'); 
+      
+      background-size: cover; 
+      background-position: center center; 
+      background-repeat: no-repeat; 
+      background-color: #111; 
+      
+      position: relative;
+      padding: 6.5rem 0 5rem;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(161,234,147,0.35);
+      border-radius: 30px;
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-kicker .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6.2vw, 5.4rem);
+      line-height: 0.98;
+      margin-bottom: 1.25rem;
+      max-width: 880px;
+    }
+
+    .hero h1 .accent-line { color: var(--accent); }
+
+    .hero p.lead-copy {
+      color: var(--muted);
+      max-width: 540px;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat .num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .hero-stat .num span { color: var(--accent); }
+
+    .hero-stat .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .video-container {
+    width: 100%;            
+    max-width: 1000px;       
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;   
+   }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+    }
+    #pillars { padding: 4.5rem 0; }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      height: 100%;
+      padding: 2rem 1.75rem;
+      transition: border-color 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pillar-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .pillar-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      background: rgba(161,234,147,0.1);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      flex-grow: 1;
+    }
+
+    .pillar-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+      transition: color 0.2s, gap 0.2s;
+    }
+
+    .pillar-link:hover { color: var(--accent); gap: 0.6rem; }
+
+    #goal-selector {
+      padding: 4.5rem 0;
+      background: var(--bg-section);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .goal-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2.5rem 2rem;
+      height: 100%;
+      cursor: pointer;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.25s, transform 0.25s, background 0.25s;
+    }
+
+    .goal-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      background: #2a2a2a;
+    }
+
+    .goal-card .goal-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .goal-card h3 {
+      color: var(--text);
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .goal-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .goal-card .goal-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s, color 0.2s;
+    }
+
+    .goal-card:hover .goal-cta { gap: 0.65rem; color: var(--accent); }
+
+    .goal-card .goal-bg-icon {
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      opacity: 0.07;
+      transform: rotate(-8deg);
+      pointer-events: none;
+    }
+
+    #community-teaser { padding: 4.5rem 0; }
+
+    .member-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 0.5rem 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .member-count .avatars {
+      display: flex;
+    }
+
+    .member-count .avatars span {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 2px solid var(--bg-card);
+      margin-left: -8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--bg);
+    }
+
+    .member-count .avatars span:first-child { margin-left: 0; }
+
+    .member-count .count-text {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .member-count .count-text strong { color: var(--text); }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card .stars { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.9rem; letter-spacing: 0.1em; }
+
+    .testimonial-card .quote {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+
+    .testimonial-author .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      color: var(--bg);
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial-author .name {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .testimonial-author .meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .cta-band {
+      padding: 4rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-band h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    .cta-band p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
+
+    footer {
+      background: #111;
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 4.5rem 0 3rem; text-align: left; }
+      .hero-stats { gap: 1.75rem; }
+      .goal-card .goal-bg-icon { width: 70px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ZONE 0: MAIN NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+      <span class="text-accent">Lettuce</span>BeFit
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="workouts.html">Workouts</a></li>
+        <li class="nav-item"><a class="nav-link" href="calorie-calc.html">Calorie Calculator</a></li>
+      </ul>
+      <div class="d-flex">
+        <a class="btn btn-cta" href="join.html">Join Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ZONE 1: HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <span class="hero-kicker"><span class="dot"></span>Science-Backed Training System</span>
+        
+        <h1>FORGE YOUR IDEAL PHYSIQUE<br><span class="accent-line">WITH SCIENCE, NOT GUESSWORK.</span></h1>
+        <p class="lead-copy">Structured splits, dialed-in macros, and a library built on volume and exercise selection that actually works — no fads, no fluff.</p>
+
+        <div class="d-flex flex-wrap gap-3">
+          <a href="join.html" class="btn btn-cta btn-lg">Join Us</a>
+          <a href="#pillars" class="btn btn-outline-accent btn-lg">Explore Workouts</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num"><span>12,400+</span></div>
+            <div class="label">Active Members</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num"><span>40+</span></div>
+            <div class="label">Programmed Splits</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num"><span>5</span></div>
+            <div class="label">Muscle Group Guides</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE 2: CORE PILLARS-->
+<section id="pillars">
+  <div class="container goal-card text-center py-5">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/Sc7LUjbKBHw?autoplay=1&si=XDiEYYq4J6A1Eysx" title="GET BIG GET STRONG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <p class="section-label">What You Get</p>
+    <h2 class="section-title">Everything To Train With Science</h2>
+    <p class="text mb-5 mx-auto" style="max-width:560px;">Two tools, one system. Built to take you from begineer to a optimised routine.</p>
+
+    <div class="row g-4 justify-content-center text-start">
+      
+      <!-- Pillar 1 -->
+      <div class="col-md-4">
+        <div class="pillar-card position-relative">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5h11v11h-11z"/><path d="M3 9h3.5M3 15h3.5M17.5 9H21M17.5 15H21M9 3v3.5M15 3v3.5M9 17.5V21M15 17.5V21"/></svg>
+          </div>
+          <h3>Training Library</h3>
+          <p>Push/Pull/Legs, Upper/Lower, and Full Body splits — each with a complete weekly layout, set &amp; rep targets, and exercise breakdowns for every muscle group.</p>
+          <a href="workouts.html" class="pillar-link stretched-link">View Workouts &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="col-md-4">
+        <div class="pillar-card position-relative">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M13 11h3M8 15h2M13 15h3"/></svg>
+          </div>
+          <h3>Calorie Calculator</h3>
+          <p>An interactive tool that dials in your daily macros from your stats and goal — bulk, cut, or maintain — in under a minute.</p>
+          <a href="calorie-calc.html" class="pillar-link stretched-link">Open Planner &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ZONE 3: CHOOSE YOUR GOAL-->
+<section id="goal-selector">
+  <div class="container">
+    <p class="section-label">Start Here</p>
+    <h2 class="section-title">Choose Your Goal</h2>
+    <p style="max-width:560px;">Two paths, two completely different training outcome.<br/> Pick the one that matches what you're chasing right now.</p>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <a href="workouts.html#splits" class="goal-card">
+          <span class="goal-tag">Aesthetic Path</span>
+          <h3>Build Muscle</h3>
+          <p>Higher rep ranges, shorter rest, twice-weekly frequency. Maximise time under tension and total volume per muscle group.</p>
+          <span class="goal-cta">See Bodybuilding Splits &rarr;</span>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a href="workouts.html#splits" class="goal-card">
+          <span class="goal-tag">Power Path</span>
+          <h3>Gain Absolute Strength</h3>
+          <p>Low reps, heavy loads, long rest periods. Built around the big compound lifts that move the most weight, fastest.</p>
+          <span class="goal-cta">See Power &amp; Strength Splits &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  ZONE 4: COMMUNITY  -->
+<section id="community-teaser">
+  <div class="container">
+    <p class="section-label">Community</p>
+    <h2 class="section-title">You're Not Doing This Alone</h2>
+
+    <div class="member-count">
+      <span class="avatars">
+        <span>JM</span><span>RK</span><span>AT</span><span>+</span>
+      </span>
+      <span class="count-text"><strong>12,400+</strong> members training together right now</span>
+    </div>
+
+    <div class="row g-4 mt-2">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★</div>
+          <p class="quote">Switched to the PPL split from the library and added 8kg to my bench in three months. The volume tables is GOATED.</p>
+          <div class="testimonial-author">
+            <div class="avatar">JM</div>
+            <div>
+              <div class="name">Jaden M.</div>
+              <div class="meta">Member since 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">The Calorie Calculator took the guesswork out of cutting. First time I've hit a prsonal best weight without crashing my energy.</p>
+          <div class="testimonial-author">
+            <div class="avatar">RK</div>
+            <div>
+              <div class="name">Reema K.</div>
+              <div class="meta">Member since 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">Community check-ins keep me accountable. Posted my Upper/Lower progress every week and never missed a session.</p>
+          <div class="testimonial-author">
+            <div class="avatar">AT</div>
+            <div>
+              <div class="name">Aaron T.</div>
+              <div class="meta">Member since 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--   ZONE 4.5: LIVE COMMUNITY SCHEDULE -->
+  <section id="schedule" class="py-5">
+    <div class="container my-3">
+      <div class="text-center mb-5 animate-reveal delay-1">
+        <p class="section-label" style="color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Live Operations</p>
+        <h2 class="section-title text-uppercase display-6">Weekly Training Schedule</h2>
+        <p class="text-muted mx-auto" style="max-width:540px; color: var(--muted) !important;">
+          Coordinate directly with your accountability groups. Pick an open slot, sync up splits.
+        </p>
+      </div>
+
+      <div class="table-responsive border rounded animate-reveal delay-2" style="border-color: var(--border) !important; background: var(--bg-card);">
+        <table class="table table-dark table-hover align-middle mb-0" style="--bs-table-bg: transparent; --bs-table-hover-bg: rgba(255,255,255,0.02);">
+          <thead style="font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.95rem; border-bottom: 2px solid var(--border);">
+            <tr>
+              <th scope="col" class="ps-4 py-3" style="color: #ffffff !important;">Session Name</th>
+              <th scope="col" class="py-3" style="color: #ffffff !important;">Target Split</th>
+              <th scope="col" class="py-3" style="color: #ffffff !important;">Time & Date </th>
+              <th scope="col" class="py-3" style="color: #ffffff !important;">In-Charge</th>
+              <th scope="col" class="py-3" style="color: #ffffff !important;">Location</th>
+              <th scope="col" class="pe-4 py-3 text-end" style="color: #ffffff !important;">Status</th>
+            </tr>
+          </thead>
+          <tbody style="font-size: 0.9rem; border-color: var(--border);">
+            <!-- Session 1 -->
+            <tr>
+              <td class="ps-4 py-3 fw-semibold text-white">
+                <div class="d-flex align-items-center ">
+                  <span class="pulse-indicator"></span>
+                  Personal Record Session
+                </div>
+              </td>
+              <td><span class="badge bg-dark border text-uppercase" style="border-color: rgba(161,234,147,0.3) !important; color: var(--accent) !important;">Upper Body</span></td>
+              <td style="color: var(--text);">Today, 18:30</td>
+              <td style="color: var(--text);">Marcus K.</td>
+              <td style="color: var(--text);">ActiveSG @ Ang Mo Kio</td>
+              <td class="pe-4 text-end"><span class="text-accent fw-semibold">Live In Progress</span></td>
+            </tr>
+
+            <!-- Session 2 -->
+            <tr>
+              <td class="ps-4 py-3 fw-semibold text-white">6 Packs</td>
+              <td><span class="badge bg-dark border text-uppercase" >Core</span></td>
+              <td style="color: var(--text);">Tomorrow, 09:00</td>
+              <td style="color: var(--text);">Sarah L.</td>
+              <td style="color: var(--text);">ActiveSG @ Bukit Canberra</td>
+              <td class="pe-4 text-end" style="color: var(--text);">5 slots open</td>
+            </tr>
+
+            <!-- Session 3 -->
+            <tr>
+              <td class="ps-4 py-3 fw-semibold text-white">Dieting Workshop</td>
+              <td><span class="badge bg-dark border text-uppercase" >Nutrition </span></td>
+              <td >Friday, 17:00</td>
+              <td >Jaden M.</td>
+              <td >ActiveSG @  Ang Mo Kio</td>
+              <td class="pe-4 text-end" >12 slots open</td>
+            </tr>
+
+            <!-- Session 4 -->
+            <tr>
+              <td class="ps-4 py-3 fw-semibold" >Leg Day</td>
+              <td><span class="badge bg-dark border text-uppercase">Quads</span></td>
+              <td >Saturday, 08:00</td>
+              <td >Coach Dave</td>
+              <td >Bishan-Ang Mo Kio Park</td>
+              <td class="pe-4 text-end"><span class="fw-semibold" style="color: red;">Session Full</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+<!-- ZONE 5: FINAL CALL TO ACTION -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Stop Guessing. Start Training.</h2>
+    <p>Your split, your macros, your people — all in one place. Join free in under a minute.</p>
+    <a href="join.html" class="btn btn-cta btn-lg">Join Us</a>
+  </div>
+</section>
+
+<!-- FOOTER-->
+<footer>
+  <div class="container">
+    <p class="mb-1"><span style="color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit &copy; 2026</p>
+    <p class="mb-0" style="font-size:0.75rem;">Always consult a qualified professional before starting a new training programme.</p>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
