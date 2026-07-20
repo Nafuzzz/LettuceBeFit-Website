@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+ <!-- External CSS -->
+  <link href="navbar.css" rel="stylesheet"/>
+  <style>
+    /* <!--  ─── TOKENS ───────────────────────────────────────────────  */
+    /* root can apply everywhere since its the root starting parent for eevrything 
+    all you need to do is call the var(name you set) to get the property stored inside */
+    :root {
+  --bg:         #1c1c1c;
+  --bg-card:    #252525;
+  --bg-section: #222222;
+  --border:     #2e2e2e;
+  --text:       #f2f2f2;
+  --accent:     #a1ea93;
+  --tab-active: #a1ea93;
+}
+
+/* ─── BASE OVERRIDES ─────────────────────────────────────── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ─── NAVBAR COLOR OVERRIDES ────────────────────────────── */
+.custom-navbar {
+  background-color: var(--bg) !important;
+  border-bottom: 1px solid var(--border);
+  
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.text-accent { 
+  color: var(--accent); 
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  color: var(--text) !important;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+  color: var(--accent) !important;
+}
+
+/* ─── BUTTON CUSTOMIZATION ───────────────────────────────── */
+/* Note: Ensure you apply class="btn btn-cta" in your HTML */
+.btn-cta {
+  background-color: var(--accent) !important;
+  color: var(--bg) !important;
+  font-weight: 700;
+  border: none;
+  padding: 0.45rem 1.2rem;
+}
+
+.btn-cta:hover {
+  background-color: #fff !important;
+  color: var(--bg) !important;
+  box-shadow: 0 0 12px rgba(161,234,147,0.45);
+  transform: translateY(-1px);
+}
+
+/* ─── SECTION HEADINGS ───────────────────────────────────── */
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.3rem;
+}
+
+/* ─── RESPONSIVE TWEAKS ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .sub-nav-wrapper .nav-pills { flex-wrap: nowrap; overflow-x: auto; }
+  .sub-nav-wrapper .nav-pills .nav-link { white-space: nowrap; font-size: 0.85rem; }
+}
+    /* ─── STICKY SUB-NAV ─────────────────────────────────────── */
+    .sub-nav-wrapper {
+      position: sticky;
+      top: 60px;
+      z-index: 1010;
+      background: #161616;
+      border-bottom: 2px solid var(--accent);
+      padding: 0.5rem 0;
+    }
+
+    .sub-nav-wrapper .nav-pills .nav-link {
+      color: var(--muted);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .sub-nav-wrapper .nav-pills .nav-link:hover { color: var(--accent); }
+
+    .sub-nav-wrapper .nav-pills .nav-link.active,
+    .sub-nav-wrapper .nav-pills .nav-link.js-active {
+      background: var(--accent);
+      color: var(--bg) !important;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+      <span class="text-accent">lettuce</span>befit
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="workouts.html">Workouts</a></li>
+        <li class="nav-item"><a class="nav-link" href="dieting.html">Dieting Plans</a></li>
+        <li class="nav-item"><a class="nav-link" href="planner.html">Calorie Planner</a></li>
+        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+      </ul>
+        <a class="btn btn-cta" href="join.html">Join Us</a>
+    </div>
+  </div>
+</nav>
+<!-- ═══════════════════════════════════════════════
+     ZONE 1: STICKY SUB-NAV
+═══════════════════════════════════════════════ -->
+<div class="sub-nav-wrapper">
+  <div class="container d-flex justify-content-center">
+    <nav class="nav nav-pills" id="subNav">
+      <a class="nav-link js-active" href="#splits">Workout Splits</a>
+      <a class="nav-link" href="#biceps">Biceps</a>
+      <a class="nav-link" href="#triceps">Triceps</a>
+      <a class="nav-link" href="#back">Back</a>
+      <a class="nav-link" href="#shoulders">Shoulders</a>
+      <a class="nav-link" href="#legs">Legs</a>
+    </nav>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

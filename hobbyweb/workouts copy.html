@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LettuceBeFit – Workouts</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+   <!-- External CSS -->
+  
+  <style>
+    
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 0: MAIN NAVBAR
+═══════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+      <span class="text-accent">lettuce</span>befit
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="workouts.html">Workouts</a></li>
+        <li class="nav-item"><a class="nav-link" href="dieting.html">Dieting Plans</a></li>
+        <li class="nav-item"><a class="nav-link" href="planner.html">Calorie Planner</a></li>
+        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+      </ul>
+        <a class="btn btn-cta" href="join.html">Join Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 1: STICKY SUB-NAV
+═══════════════════════════════════════════════ -->
+<div class="sub-nav-wrapper">
+  <div class="container d-flex justify-content-center">
+    <nav class="nav nav-pills" id="subNav">
+      <a class="nav-link js-active" href="#splits">Workout Splits</a>
+      <a class="nav-link" href="#biceps">Biceps</a>
+      <a class="nav-link" href="#triceps">Triceps</a>
+      <a class="nav-link" href="#back">Back</a>
+      <a class="nav-link" href="#shoulders">Shoulders</a>
+      <a class="nav-link" href="#legs">Legs</a>
+    </nav>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <p class="section-label">Training Library</p>
+    <h1>Workouts</h1>
+    <p class="mt-2">Select your goal. Learn your split. Master each muscle group with science-backed volume and exercise selection.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 2: WORKOUT SPLITS
+═══════════════════════════════════════════════ -->
+<section id="splits">
+  <div class="container">
+    <p class="section-label">Training Splits</p>
+    <h2 class="section-title">Choose Your Program</h2>
+    <p class="text-muted mb-4">Pick the split that matches your goal and schedule. Each includes a full weekly layout.</p>
+
+    <div class="row g-4">
+
+      <!-- CARD 1: PPL -->
+      <div class="col-md-4">
+        <div class="split-card card">
+          <div class="card-header">
+            <span class="split-tag">Hypertrophy</span>
+            <h3>Push / Pull / Legs</h3>
+            <small class="text-muted">6 days/week · 2× frequency</small>
+          </div>
+          <div class="card-body">
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Groups muscles by functional synergy. Ideal for maximum muscle growth with twice-weekly volume per group.</p>
+            <table class="table schedule-table mb-0">
+              <thead><tr><th>Day</th><th>Workout</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td><span class="day-pill">Mon</span></td><td>Push</td><td>Chest · Shoulders · Triceps</td></tr>
+                <tr><td><span class="day-pill">Tue</span></td><td>Pull</td><td>Back · Rear Delts · Biceps</td></tr>
+                <tr><td><span class="day-pill">Wed</span></td><td>Legs</td><td>Quads · Hamstrings · Glutes</td></tr>
+                <tr><td><span class="day-pill">Thu</span></td><td>Push</td><td>Chest · Shoulders · Triceps</td></tr>
+                <tr><td><span class="day-pill">Fri</span></td><td>Pull</td><td>Back · Rear Delts · Biceps</td></tr>
+                <tr><td><span class="day-pill">Sat</span></td><td>Legs</td><td>Quads · Hamstrings · Glutes</td></tr>
+                <tr><td><span class="day-pill day-rest">Sun</span></td><td colspan="2" style="color:var(--muted);">Rest &amp; Recovery</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: Upper/Lower -->
+      <div class="col-md-4">
+        <div class="split-card card">
+          <div class="card-header">
+            <span class="split-tag">Strength &amp; Power</span>
+            <h3>Upper / Lower</h3>
+            <small class="text-muted">4 days/week · CNS recovery focus</small>
+          </div>
+          <div class="card-body">
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Separates pushing/pulling from squatting/hinging. Maximises intensity on compound lifts with ample nervous system recovery.</p>
+            <table class="table schedule-table mb-0">
+              <thead><tr><th>Day</th><th>Workout</th><th>Primary Focus</th></tr></thead>
+              <tbody>
+                <tr><td><span class="day-pill">Mon</span></td><td>Upper A</td><td>Heavy Bench &amp; Horizontal Pull</td></tr>
+                <tr><td><span class="day-pill">Tue</span></td><td>Lower A</td><td>Barbell Squats &amp; Quad Focus</td></tr>
+                <tr><td><span class="day-pill day-rest">Wed</span></td><td colspan="2" style="color:var(--muted);">Rest – CNS Recovery</td></tr>
+                <tr><td><span class="day-pill">Thu</span></td><td>Upper B</td><td>Overhead Press &amp; Vertical Pull</td></tr>
+                <tr><td><span class="day-pill">Fri</span></td><td>Lower B</td><td>Deadlifts &amp; Hamstring Focus</td></tr>
+                <tr><td><span class="day-pill day-rest">Sat</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+                <tr><td><span class="day-pill day-rest">Sun</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: Full Body -->
+      <div class="col-md-4">
+        <div class="split-card card">
+          <div class="card-header">
+            <span class="split-tag">Time Efficiency</span>
+            <h3>3-Day Full Body</h3>
+            <small class="text-muted">3 days/week · High frequency</small>
+          </div>
+          <div class="card-body">
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Best for busy schedules. Stimulates every muscle three times per week using high-yield compound movements only.</p>
+            <table class="table schedule-table mb-0">
+              <thead><tr><th>Day</th><th>Session</th><th>Core Exercises</th></tr></thead>
+              <tbody>
+                <tr><td><span class="day-pill">Mon</span></td><td>Full A</td><td>Squats · Bench · Lat Pulldown</td></tr>
+                <tr><td><span class="day-pill day-rest">Tue</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+                <tr><td><span class="day-pill">Wed</span></td><td>Full B</td><td>RDL · OHP · Barbell Row</td></tr>
+                <tr><td><span class="day-pill day-rest">Thu</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+                <tr><td><span class="day-pill">Fri</span></td><td>Full C</td><td>Leg Press · Inc. DB Press · Chin-ups</td></tr>
+                <tr><td><span class="day-pill day-rest">Sat</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+                <tr><td><span class="day-pill day-rest">Sun</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 3: MUSCLE GROUP DEEP-DIVES
+═══════════════════════════════════════════════ -->
+
+<!-- ── BICEPS ─────────────────────────────────── -->
+<section id="biceps" class="muscle-section">
+  <div class="container">
+    <p class="section-label">Muscle Group 01</p>
+    <h2 class="section-title">Biceps</h2>
+
+    <!-- Volume Table -->
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <table class="table volume-table">
+          <thead>
+            <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bodybuilding (Hypertrophy)</td><td>2 – 3</td><td>3 – 4</td><td>8 – 12</td><td>60 – 90 sec</td></tr>
+            <tr><td>Power &amp; Strength</td><td>1 – 2</td><td>3 – 4</td><td>5 – 8</td><td>2 – 3 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="bicepsTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#biceps-bb" type="button" role="tab">Bodybuilding</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#biceps-str" type="button" role="tab">Power &amp; Strength</button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="bicepsTabContent">
+
+      <div class="tab-pane fade show active" id="biceps-bb" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Incline Dumbbell Curl</div>
+              <p class="exercise-why"><strong>Why:</strong> Sitting on an incline places the bicep's long head into extreme stretch, increasing time under tension and maximising muscle fibre recruitment.</p>
+              <p class="exercise-how"><strong>How:</strong> Set a bench to a 45-degree incline. Sit back, let your arms hang straight down, keep your elbows pinned. Curl the weights up without swinging your shoulders.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Preacher Curl</div>
+              <p class="exercise-why"><strong>Why:</strong> The arm pad locks your elbows in place, eliminating momentum and isolating the short head for better inner-bicep thickness.</p>
+              <p class="exercise-how"><strong>How:</strong> Sit at a preacher bench, rest your upper arms flat against the pad. Lower the barbell fully until your arms extend, then curl it up — stopping just before your forearms reach vertical.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="biceps-str" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Weighted Chin-Up</div>
+              <p class="exercise-why"><strong>Why:</strong> A heavy compound movement that allows you to load the biceps with significantly more absolute weight than any isolation curl can provide.</p>
+              <p class="exercise-how"><strong>How:</strong> Wear a dip belt with weight plates. Grip the pull-up bar with an underhand, shoulder-width grip. Pull yourself up until your chin clears the bar, then lower with control.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Heavy Barbell Curl</div>
+              <p class="exercise-why"><strong>Why:</strong> Allows for maximum mechanical tension and progressive overload across the entire biceps brachii complex.</p>
+              <p class="exercise-how"><strong>How:</strong> Stand with feet shoulder-width apart, hold a barbell underhand. Squeeze glutes and core to prevent swinging, then curl the bar toward your chest.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tab-content -->
+  </div>
+</section>
+
+<!-- ── TRICEPS ─────────────────────────────────── -->
+<section id="triceps" class="muscle-section">
+  <div class="container">
+    <p class="section-label">Muscle Group 02</p>
+    <h2 class="section-title">Triceps</h2>
+
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <table class="table volume-table">
+          <thead>
+            <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bodybuilding (Hypertrophy)</td><td>2 – 3</td><td>3 – 4</td><td>10 – 15</td><td>60 – 90 sec</td></tr>
+            <tr><td>Power &amp; Strength</td><td>1 – 2</td><td>4 – 5</td><td>5 – 8</td><td>2 – 3 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs" id="tricepsTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#triceps-bb" type="button" role="tab">Bodybuilding</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#triceps-str" type="button" role="tab">Power &amp; Strength</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="triceps-bb" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Overhead Cable Tricep Extension</div>
+              <p class="exercise-why"><strong>Why:</strong> Places the long head of the tricep (the largest section) into a fully stretched position overhead, driving hypertrophy.</p>
+              <p class="exercise-how"><strong>How:</strong> Attach a rope to a cable at chest height. Face away, hold rope behind head, lean forward, and extend elbows straight out in front of you.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Cable Tricep Pushdown</div>
+              <p class="exercise-why"><strong>Why:</strong> Cables provide constant tension throughout the entire range of motion, isolating the lateral and medial heads of the triceps.</p>
+              <p class="exercise-how"><strong>How:</strong> Face the cable machine with a straight bar or rope. Tuck elbows tightly against your ribs and push the weight down until your arms lock out completely.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="triceps-str" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Close-Grip Barbell Bench Press</div>
+              <p class="exercise-why"><strong>Why:</strong> Narrowing your grip shifts the load from your chest to your triceps, allowing you to press heavy loads safely.</p>
+              <p class="exercise-how"><strong>How:</strong> Grip the bar at shoulder-width. Lower to your lower chest keeping elbows tucked to your sides, then press up.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Weighted Dip</div>
+              <p class="exercise-why"><strong>Why:</strong> Forces your triceps to manage your bodyweight plus added resistance, creating high mechanical tension.</p>
+              <p class="exercise-how"><strong>How:</strong> Grip parallel dip bars. Keep your torso upright to focus on the triceps. Lower until your shoulders drop just below your elbows, then drive back up.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BACK ────────────────────────────────────── -->
+<section id="back" class="muscle-section">
+  <div class="container">
+    <p class="section-label">Muscle Group 03</p>
+    <h2 class="section-title">Back</h2>
+
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <table class="table volume-table">
+          <thead>
+            <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bodybuilding (Hypertrophy)</td><td>3 – 4</td><td>3 – 4</td><td>8 – 12</td><td>90 sec</td></tr>
+            <tr><td>Power &amp; Strength</td><td>2 – 3</td><td>4 – 5</td><td>3 – 6</td><td>3 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs" id="backTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#back-bb" type="button" role="tab">Bodybuilding</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#back-str" type="button" role="tab">Power &amp; Strength</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="back-bb" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Wide-Grip Lat Pulldown</div>
+              <p class="exercise-why"><strong>Why:</strong> Targets the vertical fibres of the latissimus dorsi, widening the upper back to create a distinct V-taper appearance.</p>
+              <p class="exercise-how"><strong>How:</strong> Grip the bar wider than shoulder-width. Pull your shoulder blades down and drive your elbows toward your hips, bringing the bar to your upper chest.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Chest-Supported T-Bar Row</div>
+              <p class="exercise-why"><strong>Why:</strong> Supporting your chest removes lower back fatigue entirely, letting you isolate and fully exhaust the mid-back, rhomboids, and traps.</p>
+              <p class="exercise-how"><strong>How:</strong> Lie face down on the pad. Pull the weight toward your torso, squeeze shoulder blades together at the top, and lower slowly.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="back-str" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Conventional Barbell Deadlift</div>
+              <p class="exercise-why"><strong>Why:</strong> The definitive posterior chain movement. Builds structural strength from your hamstrings through your spinal erectors and upper traps.</p>
+              <p class="exercise-how"><strong>How:</strong> Stand with mid-foot under the bar. Hinge down, grip the bar, flatten your back, and push the floor away with your legs to stand with the weight.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Barbell Row</div>
+              <p class="exercise-why"><strong>Why:</strong> Develops explosive horizontal pulling power and absolute density across the entire upper and mid-back.</p>
+              <p class="exercise-how"><strong>How:</strong> Hinge forward at 45 degrees, overhand grip. Pull the bar dynamically to your lower stomach, keeping your spine completely neutral.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SHOULDERS ───────────────────────────────── -->
+<section id="shoulders" class="muscle-section">
+  <div class="container">
+    <p class="section-label">Muscle Group 04</p>
+    <h2 class="section-title">Shoulders</h2>
+
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <table class="table volume-table">
+          <thead>
+            <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bodybuilding (Hypertrophy)</td><td>3</td><td>3 – 4</td><td>10 – 15</td><td>60 – 90 sec</td></tr>
+            <tr><td>Power &amp; Strength</td><td>1 – 2</td><td>4 – 5</td><td>4 – 6</td><td>2 – 3 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs" id="shouldersTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#shoulders-bb" type="button" role="tab">Bodybuilding</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#shoulders-str" type="button" role="tab">Power &amp; Strength</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="shoulders-bb" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Dumbbell Lateral Raise</div>
+              <p class="exercise-why"><strong>Why:</strong> Directly isolates the lateral deltoid head, expanding the width of your frame and building shoulder roundness.</p>
+              <p class="exercise-how"><strong>How:</strong> Stand holding dumbbells at your sides. Lean slightly forward and raise your arms out to your sides along the scapular plane (roughly 30 degrees forward) until shoulder height.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Reverse Dumbbell Fly (Rear Delts)</div>
+              <p class="exercise-why"><strong>Why:</strong> Balances the shoulder joint and creates a full 3-D shoulder profile — most lifters neglect this entirely.</p>
+              <p class="exercise-how"><strong>How:</strong> Hinge forward until your torso is nearly parallel to the floor. With a slight elbow bend, raise the dumbbells out horizontally, leading with your elbows.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="shoulders-str" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Standing Overhead Barbell Press (OHP)</div>
+              <p class="exercise-why"><strong>Why:</strong> Requires total body stabilisation, loading your front deltoids, triceps, core, and upper back simultaneously.</p>
+              <p class="exercise-how"><strong>How:</strong> Clean the bar to your upper chest. Squeeze glutes, brace your core, and press straight up overhead — move your face back slightly to let the bar clear.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Push Press</div>
+              <p class="exercise-why"><strong>Why:</strong> A slight leg drive bypasses the initial sticking point, allowing you to overload your shoulders with 10–20% more weight than a strict press.</p>
+              <p class="exercise-how"><strong>How:</strong> Set up like the OHP. Dip your knees slightly (2–3 inches), then drive upward aggressively through your legs to press the bar overhead.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LEGS ───────────────────────────────────── -->
+<section id="legs" class="muscle-section">
+  <div class="container">
+    <p class="section-label">Muscle Group 05</p>
+    <h2 class="section-title">Legs</h2>
+
+    <div class="row mb-4">
+      <div class="col-lg-8">
+        <table class="table volume-table">
+          <thead>
+            <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bodybuilding (Hypertrophy)</td><td>3 – 4</td><td>3 – 4</td><td>8 – 12</td><td>90 – 120 sec</td></tr>
+            <tr><td>Power &amp; Strength</td><td>2</td><td>4 – 6</td><td>3 – 5</td><td>3 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs" id="legsTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#legs-bb" type="button" role="tab">Bodybuilding</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#legs-str" type="button" role="tab">Power &amp; Strength</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="legs-bb" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Hack Squat Machine</div>
+              <p class="exercise-why"><strong>Why:</strong> Stabilises your torso and eliminates balance requirements so your nervous system can safely push your quadriceps to absolute muscular failure.</p>
+              <p class="exercise-how"><strong>How:</strong> Position your back flat against the pad, feet low on the platform. Release safety catches, lower until thighs break parallel, then drive back up.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Lying Leg Curl</div>
+              <p class="exercise-why"><strong>Why:</strong> Provides isolated mechanical tension on the hamstrings via knee flexion — which cannot be fully replicated by hip hinge movements alone.</p>
+              <p class="exercise-how"><strong>How:</strong> Lie face down, align your knees with the pivot point. Pull the roller pad toward your glutes quickly, hold briefly, then lower under control.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="legs-str" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-7">
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 1</span>
+              <div class="exercise-name">Barbell Back Squat</div>
+              <p class="exercise-why"><strong>Why:</strong> Forces the quadriceps, glutes, adductors, and core to work together as a single unit to move maximum weight — the foundation of lower body power.</p>
+              <p class="exercise-how"><strong>How:</strong> Rest the bar across your upper traps, feet shoulder-width apart. Push hips back and lower until your hip crease drops below your knees, then drive up hard.</p>
+            </div>
+            <div class="exercise-block">
+              <span class="exercise-label">Exercise 2</span>
+              <div class="exercise-name">Romanian Deadlift (RDL)</div>
+              <p class="exercise-why"><strong>Why:</strong> Maximises eccentric loading and pure pulling strength across the glutes, hamstrings, and lower back — protecting you against injury.</p>
+              <p class="exercise-how"><strong>How:</strong> Hold a barbell at your hips, knees slightly bent and fixed. Push your hips back as far as possible, lowering the bar down your thighs until a deep hamstring stretch, then return to standing.</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="exercise-img-placeholder">
+              <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Add exercise image or video here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <p class="mb-1"><span style="color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit &copy; 2026</p>
+    <p class="mb-0" style="font-size:0.75rem;">Always consult a qualified professional before starting a new training programme.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- Intersection Observer: highlight active sub-nav link -->
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const subLinks = document.querySelectorAll('#subNav .nav-link');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        subLinks.forEach(link => {
+          link.classList.remove('js-active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('js-active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-110px 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

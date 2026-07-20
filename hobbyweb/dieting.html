@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LettuceBeFit – Dieting Plans</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+   <!-- External CSS -->
+  <link href="navbar.css" rel="stylesheet"/>
+  <style>
+    /* ─── STICKY SUB-NAV ─────────────────────────────────────── */
+    .sub-nav-wrapper {
+      position: sticky;
+      top: 60px;
+      z-index: 1010;
+      background: #161616;
+      border-bottom: 2px solid var(--accent);
+      padding: 0.5rem 0;
+    }
+ 
+    .sub-nav-wrapper .nav-pills .nav-link {
+      color: var(--muted);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      transition: color 0.2s, background 0.2s;
+    }
+ 
+    .sub-nav-wrapper .nav-pills .nav-link:hover { color: var(--accent); }
+ 
+    .sub-nav-wrapper .nav-pills .nav-link.active,
+    .sub-nav-wrapper .nav-pills .nav-link.js-active {
+      background: var(--accent);
+      color: var(--bg) !important;
+    }
+
+    /* ─── NUTRITION INTERACTIVE PILLS ────────────────────────── */
+    .custom-pills .nav-link {
+      color: var(--muted);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 0.4rem 1.2rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .custom-pills .nav-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .custom-pills .nav-link.active {
+      background: var(--accent) !important;
+      color: var(--bg) !important;
+      border-color: var(--accent);
+    }
+
+    /* ─── PAGE HERO ──────────────────────────────────────────── */
+    .page-hero {
+      padding: 4rem 0 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-hero p { color: var(--muted); max-width: 560px; }
+
+    /* ─── SECTION HEADINGS ───────────────────────────────────── */
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 0.3rem;
+    }
+
+    .content-section { padding: 4rem 0; border-top: 1px solid var(--border); }
+    .content-section:nth-child(even) { background: var(--bg-section); }
+
+    /* ─── NUTRITION FRAMEWORK CARDS ──────────────────────────── */
+    .diet-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      height: 100%;
+      padding: 2rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .diet-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+    .diet-tag {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(161,234,147,0.12);
+      color: var(--accent);
+      border-radius: 3px;
+      padding: 0.15rem 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .diet-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .diet-card h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.5rem; letter-spacing: 0.03em; }
+
+    .diet-card ul { padding-left: 1.1rem; margin-bottom: 0; }
+    .diet-card li { margin-bottom: 0.55rem; font-size: 0.88rem; color: #ccc; line-height: 1.5; }
+    .diet-card li strong { color: var(--text); }
+
+    .diet-formula {
+      background: var(--bg);
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* ─── PROTEIN PRICE TABLE ────────────────────────────────── */
+    .protein-table thead th {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      border-color: var(--accent);
+      vertical-align: middle;
+    }
+
+    .protein-table td {
+      background: var(--bg-card);
+      color: var(--text);
+      border-color: var(--border);
+      vertical-align: middle;
+      font-size: 0.85rem;
+    }
+
+    .protein-table tr:hover td { background: #2b2b2b; }
+
+    .store-pill {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      background: var(--bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    /* ─── MEAL CARDS ──────────────────────────────────────────── */
+    .meal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      height: 100%;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .meal-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+    .meal-img-placeholder {
+      background: var(--bg-section);
+      border-bottom: 1px solid var(--border);
+      height: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .meal-img-placeholder svg { margin-bottom: 0.4rem; opacity: 0.4; }
+
+    .meal-card .card-body { padding: 1.4rem; }
+
+    .badge-goal {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      margin-bottom: 0.7rem;
+      display: inline-block;
+    }
+
+    .badge-shred { background: rgba(161,234,147,0.15); color: var(--accent); border: 1px solid var(--accent-dim); }
+    .badge-bulk  { background: rgba(255,193,7,0.15); color: #ffc107; border: 1px solid #ffc107; }
+
+    .meal-card h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+
+    .macro-strip {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 0;
+    }
+
+    .macro-strip span strong { color: var(--text); }
+
+    .meal-card h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0.9rem 0 0.4rem;
+    }
+
+    .meal-card ol, .meal-card ul.ingredient-list {
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: #ccc;
+      line-height: 1.55;
+    }
+
+    .meal-card ol li { margin-bottom: 0.4rem; }
+    .meal-card ol li strong { color: var(--text); }
+
+    /* ─── CTA BANNER ─────────────────────────────────────────── */
+    .cta-banner {
+      background-color: var(--accent);
+      color: var(--bg);
+      border-radius: 10px;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h3 { color: var(--bg); font-size: 2rem; }
+    .cta-banner p { color: #2b2b2b; max-width: 620px; margin: 0 auto; }
+
+    .btn-cta-dark {
+      background-color: var(--bg) !important;
+      color: #fff !important;
+      font-weight: 700;
+      border: none;
+      border-radius: 4px;
+      padding: 0.6rem 1.6rem;
+      transition: all 0.2s;
+    }
+
+    .btn-cta-dark:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: #111;
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .sub-nav-wrapper .nav-pills { flex-wrap: nowrap; overflow-x: auto; }
+      .sub-nav-wrapper .nav-pills .nav-link { white-space: nowrap; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 0: MAIN NAVBAR
+═══════════════════════════════════════════════ -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+      <span class="text-accent">Lettuce</span>befit
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="workouts.html">Workouts</a></li>
+        <li class="nav-item"><a class="nav-link active" href="dieting.html">Dieting Plans</a></li>
+        <li class="nav-item"><a class="nav-link" href="planner.html">Calorie Planner</a></li>
+        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+      </ul>
+      <div class="d-flex">
+        <a class="btn btn-cta" href="join.html">Join Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 1: STICKY SUB-NAV
+═══════════════════════════════════════════════ -->
+<div class="sub-nav-wrapper">
+  <div class="container d-flex justify-content-center">
+    <nav class="nav nav-pills" id="subNav">
+      <a class="nav-link js-active" href="#frameworks">Bulk vs Cut</a>
+      <a class="nav-link" href="#protein-table">Budget Protein</a>
+      <a class="nav-link" href="#meals">Meal Matrix</a>
+    </nav>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <p class="section-label">Nutrition Library</p>
+    <h1>Dieting Plans</h1>
+    <p class="mt-2">Fuel your training with a plan that fits your goal and your grocery budget — clean bulking, aggressive cutting, and the cheapest protein sources in Singapore supermarkets.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1: NUTRITIONAL FRAMEWORKS (TOGGLEABLE)
+═══════════════════════════════════════════════ -->
+<section id="frameworks" class="content-section">
+  <div class="container">
+    <p class="section-label">Section 01</p>
+    <h2 class="section-title">Dieting Guide</h2>
+    <p class="text-muted mb-4">Pick the nutritional framework that matches your current training goal.</p>
+
+    <!-- Goal Selection Toggle Buttons -->
+    <div class="d-flex justify-content-center mb-4">
+      <ul class="nav nav-pills custom-pills" id="nutritionTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="bodybuilding-tab" data-bs-toggle="pill" data-bs-target="#bodybuilding-content" type="button" role="tab" aria-controls="bodybuilding-content" aria-selected="true">
+            Bulking
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="strength-tab" data-bs-toggle="pill" data-bs-target="#strength-content" type="button" role="tab" aria-controls="strength-content" aria-selected="false">
+            Cutting
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tab Contents Container -->
+    <div class="tab-content" id="nutritionTabContent">
+      
+      <!-- Pane 1: Bodybuilding -->
+      <div class="tab-pane fade show active" id="bodybuilding-content" role="tabpanel" aria-labelledby="bodybuilding-tab">
+        <div class="diet-card">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+            <span class="diet-tag">Calorie Surplus</span>
+            <div class="diet-formula">+200 – 400 kcal above TDEE</div>
+          </div>
+          <h3>The Bodybuilding &amp; Hypertrophy Framework</h3>
+          
+          <h5>1. Core Caloric Strategy</h5>
+          <ul>
+            <li><strong>The Surplus Bounds:</strong> Add 200 to 400 calories to your measured baseline daily. Aggressive surpluses exceeding 500 calories accelerate adipose (fat) tissue storage without increasing muscle protein synthesis limits.</li>
+            <li><strong>Target Growth Metric:</strong> Aim for a total body weight gain of 0.5kg to 1kg per month. Faster progression points to excessive body fat accumulation.</li>
+          </ul>
+
+          <h5>2. Macronutrient Optimization</h5>
+          <ul>
+            <li><strong>Protein Formulation (2.2g per kg):</strong> Provides a constant pool of floating amino acids. Focus strictly on complete proteins containing all nine essential amino acids.</li>
+            <li><strong>Carbohydrates Formulation (4.0g – 6.0g per kg):</strong> Fuels high-volume training cycles and keeps muscle structures fully filled via structural glycogen integration.</li>
+            <li><strong>Fats Formulation (0.8g – 1.0g per kg):</strong> Maintains fundamental hormone production baseline settings (testosterone creation tracks directly with healthy fat intake updates).</li>
+          </ul>
+
+          <h5>3. Meal Timing &amp; Muscle Protein Synthesis (MPS)</h5>
+          <ul>
+            <li><strong>Dosing Frequency:</strong> Break up total daily macro targets into 4 to 5 distinct meals spaced 3 to 4 hours apart. Each block must clear a 30g to 40g threshold to trigger active muscle repair sequences.</li>
+            <li><strong>Pre-Workout Loading:</strong> Consume 30g of fast-digesting carbohydrates balanced alongside 30g of stable protein 60 to 90 minutes before stepping onto the gym floor.</li>
+            <li><strong>Post-Workout Anabolic Capture:</strong> Consume a highly bioavailable protein option (such as whey isolates) within 60 minutes of training to clear systemic cell breakdown and switch on repair states.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pane 2: Power & Strength -->
+      <div class="tab-pane fade" id="strength-content" role="tabpanel" aria-labelledby="strength-tab">
+        <div class="diet-card">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+            <span class="diet-tag text-warning" style="background:rgba(255,193,7,0.12);">Performance &amp; Recovery</span>
+            <div class="diet-formula text-warning" style="border-color:rgba(255,193,7,0.3);">Maintenance or +100 – 200 kcal</div>
+          </div>
+          <h3>The Power &amp; Strength Framework</h3>
+          
+          <h5>1. Core Caloric Strategy</h5>
+          <ul>
+            <li><strong>The Baseline Rule:</strong> Operate directly at localized maintenance caloric numbers or within a controlled micro-surplus of 100 to 200 calories max.</li>
+            <li><strong>Deficit Warnings:</strong> Avoid run-state caloric deficits while working through structural strength blocks. Depleting absolute structural reserves scales down your neurological output potential and directly alters baseline lift safety mechanics.</li>
+          </ul>
+
+          <h5>2. Macronutrient Optimization</h5>
+          <ul>
+            <li><strong>Protein Formulation (1.6g – 2.0g per kg):</strong> Requires slightly less total daily protein volume allocations than pure bodybuilding profiles, due to lowered cumulative mechanical breakdown structures across low-rep strength targets.</li>
+            <li><strong>Carbohydrates Formulation (3.5g – 5.0g per kg):</strong> Mandated to fuel phosphagen energy pathways and key glycolytic systems triggered across intense heavy compound movements.</li>
+            <li><strong>Fats Formulation (1.0g – 1.2g per kg):</strong> Higher relative parameters optimize compound joint function pathways and systemic inflammation regulation. Focus on deep omega-3 sources (salmon, clean fish oils) to preserve tissue parameters.</li>
+          </ul>
+
+          <h5>3. Intra-Workout Fuelling &amp; Electrolyte Management</h5>
+          <ul>
+            <li><strong>The Sodium Matrix:</strong> Intense force generation needs high intra-muscular pressure profiles. Aim for 500mg to 1000mg of structural sodium near training frames to support hydration parameters and optimize lifting leverage.</li>
+            <li><strong>Intra-Workout Carbs:</strong> When passing the 90-minute point of training, sip on 30g of functional branched cyclic dextrin formulas to avoid central fatigue states.</li>
+            <li><strong>Post-Workout System Backing:</strong> Balance immediate protein inputs alongside high micronutrient-dense items (dark berries, dense greens) to neutralize system strain elements.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2: SINGAPORE BUDGET PROTEIN GUIDE
+═══════════════════════════════════════════════ -->
+<section id="protein-table" class="content-section">
+  <div class="container">
+    <p class="section-label">Section 02</p>
+    <h2 class="section-title">Singapore Budget Protein Hacks</h2>
+    <p class="text-muted mb-4">The best price-to-protein ratios at NTUC FairPrice &amp; Giant — hit your macros without blowing your student budget.</p>
+
+    <div class="table-responsive">
+      <table class="table protein-table align-middle">
+        <thead>
+          <tr>
+            <th>Supermarket</th>
+            <th>Product</th>
+            <th>Approx. Price (SGD)</th>
+            <th>Protein / 100g</th>
+            <th>Why It Wins</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="store-pill">NTUC FairPrice</span></td>
+            <td>Pasar Frozen Chicken Breast (1kg)</td>
+            <td>$7.50 – $8.50</td>
+            <td>31g</td>
+            <td>The cheapest source of pure lean animal protein available locally.</td>
+          </tr>
+          <tr>
+            <td><span class="store-pill">Giant / NTUC</span></td>
+            <td>Fortune Pressed Tofu / Tau Kwa (300g)</td>
+            <td>$0.90 – $1.20</td>
+            <td>12g</td>
+            <td>Extreme budget-friendly plant protein, versatile for stir-fries.</td>
+          </tr>
+          <tr>
+            <td><span class="store-pill">Giant</span></td>
+            <td>Meadows Frozen White Fish Fillet (1kg)</td>
+            <td>$8.00 – $9.50</td>
+            <td>18g</td>
+            <td>Low-calorie, zero-fat protein alternative to poultry.</td>
+          </tr>
+          <tr>
+            <td><span class="store-pill">NTUC / Giant</span></td>
+            <td>Pasar / Meadows Fresh Eggs (10 pack)</td>
+            <td>$2.80 – $3.20</td>
+            <td>13g (6g/egg)</td>
+            <td>Gold-standard bioavailable protein and essential fats.</td>
+          </tr>
+          <tr>
+            <td><span class="store-pill">NTUC FairPrice</span></td>
+            <td>FairPrice Canned Tuna in Water</td>
+            <td>$2.20 – $2.50</td>
+            <td>25g</td>
+            <td>Shelf-stable, zero-prep convenience protein for busy student schedules.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3: HIGH-PROTEIN MEAL MATRIX
+═══════════════════════════════════════════════ -->
+<section id="meals" class="content-section">
+  <div class="container">
+    <p class="section-label">Section 03</p>
+    <h2 class="section-title">High-Protein Meals</h2>
+    <p class="text-muted mb-3">Two go-to recipes built from the budget protein guide above — one for cutting, one for clean bulking.</p>
+
+    <div class="row g-4">
+      <!-- Meal 1 -->
+      <div class="col-md-6" id="meal-shred">
+        <div class="meal-card">
+          <div class="meal-img-placeholder">
+            <svg width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Add meal photo here
+          </div>
+          <div class="card-body">
+            <span class="badge-goal badge-shred">Cutting / Fat Loss</span>
+            <h3>The Ultimate Low-Calorie Shred Bowl</h3>
+            <div class="macro-strip">
+              <span><strong>420</strong> kcal</span>
+              <span><strong>52g</strong> protein</span>
+              <span><strong>8g</strong> fat</span>
+              <span><strong>35g</strong> carbs</span>
+            </div>
+
+            <h4>Ingredients</h4>
+            <ul class="ingredient-list">
+              <li>180g NTUC Pasar chicken breast</li>
+              <li>150g cauliflower rice</li>
+              <li>100g broccoli</li>
+              <li>10g light soy sauce</li>
+              <li>5ml sesame oil</li>
+            </ul>
+
+            <h4>Method</h4>
+            <ol>
+              <li><strong>Dice</strong> the chicken breast into even cubes and season with salt, pepper, and light soy sauce.</li>
+              <li><strong>Heat</strong> the sesame oil in a non-stick pan over medium-high heat.</li>
+              <li><strong>Pan-sear</strong> the chicken for 6 – 8 minutes until the internal temperature reaches 75°C.</li>
+              <li><strong>Steam</strong> the cauliflower rice and broccoli separately, then combine into a bowl with the chicken.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meal 2 -->
+      <div class="col-md-6" id="meal-bulk">
+        <div class="meal-card">
+          <div class="meal-img-placeholder">
+            <svg width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Add meal photo here
+          </div>
+          <div class="card-body">
+            <span class="badge-goal badge-bulk">Budget / Clean Bulk</span>
+            <h3>High-Protein Budget Egg &amp; Tofu Scramble</h3>
+            <div class="macro-strip">
+              <span><strong>580</strong> kcal</span>
+              <span><strong>45g</strong> protein</span>
+              <span><strong>22g</strong> fat</span>
+              <span><strong>50g</strong> carbs</span>
+            </div>
+
+            <h4>Ingredients</h4>
+            <ul class="ingredient-list">
+              <li>1 block Fortune pressed tofu (tau kwa)</li>
+              <li>3 large eggs</li>
+              <li>100g jasmine rice</li>
+              <li>Spring onions, to taste</li>
+            </ul>
+
+            <h4>Method</h4>
+            <ol>
+              <li><strong>Mash</strong> the tofu block using a fork until it crumbles into egg-like pieces.</li>
+              <li><strong>Whisk</strong> the 3 eggs in a bowl with a pinch of salt.</li>
+              <li><strong>Pour</strong> the mashed tofu into a hot pan and cook for 3 minutes to remove excess moisture.</li>
+              <li><strong>Add</strong> the whisked eggs directly into the pan, stirring continuously until cooked, then serve over hot jasmine rice.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CTA BANNER
+═══════════════════════════════════════════════ -->
+<section class="content-section">
+  <div class="container">
+    <div class="cta-banner">
+      <h3 class="fw-bold">Stop Guessing Your Nutritional Numbers</h3>
+      <p class="lead mb-3">Use our interactive tool to calculate your exact caloric needs based on your specific training goals.</p>
+      <a class="btn btn-cta-dark btn-lg fw-bold mt-2" href="planner.html">Go to Calorie Planner →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <p class="mb-1"><span style="color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit &copy; 2026</p>
+    <p class="mb-0" style="font-size:0.75rem;">Always consult a qualified professional or dietitian before starting a new nutrition programme.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- Intersection Observer: highlight active sub-nav link -->
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const subLinks = document.querySelectorAll('#subNav .nav-link');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        subLinks.forEach(link => {
+          link.classList.remove('js-active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('js-active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-110px 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
+
+```

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Splits</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- External CSS -->
+  <link href="navbar.css" rel="stylesheet"/>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     ZONE 2: WORKOUT SPLITS
+═══════════════════════════════════════════════ -->
+<section id="splits">
+  <div class="container">
+    <p class="section-label">Training Splits</p>
+    <h2 class="section-title">Choose Your Program</h2>
+    <p class="text-muted mb-4">Pick the split that matches your goal and schedule. Each includes a full weekly layout.</p>
+
+    <div class="row g-4">
+
+      <!-- CARD 1: PPL -->
+      <div class="col-md-4">
+        <div class="split-card card">
+          <div class="card-header">
+            <span class="split-tag">Hypertrophy</span>
+            <h3>Push / Pull / Legs</h3>
+            <small class="text-muted">6 days/week · 2× frequency</small>
+          </div>
+          <div class="card-body">
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Groups muscles by functional synergy. Ideal for maximum muscle growth with twice-weekly volume per group.</p>
+            <table class="table schedule-table mb-0">
+              <thead><tr><th>Day</th><th>Workout</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td><span class="day-pill">Mon</span></td><td>Push</td><td>Chest · Shoulders · Triceps</td></tr>
+                <tr><td><span class="day-pill">Tue</span></td><td>Pull</td><td>Back · Rear Delts · Biceps</td></tr>
+                <tr><td><span class="day-pill">Wed</span></td><td>Legs</td><td>Quads · Hamstrings · Glutes</td></tr>
+                <tr><td><span class="day-pill">Thu</span></td><td>Push</td><td>Chest · Shoulders · Triceps</td></tr>
+                <tr><td><span class="day-pill">Fri</span></td><td>Pull</td><td>Back · Rear Delts · Biceps</td></tr>
+                <tr><td><span class="day-pill">Sat</span></td><td>Legs</td><td>Quads · Hamstrings · Glutes</td></tr>
+                <tr><td><span class="day-pill day-rest">Sun</span></td><td colspan="2" style="color:var(--muted);">Rest &amp; Recovery</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: Upper/Lower -->
+      <div class="col-md-4">
+        <div class="split-card card">
+          <div class="card-header">
+            <span class="split-tag">Strength &amp; Power</span>
+            <h3>Upper / Lower</h3>
+            <small class="text-muted">4 days/week · CNS recovery focus</small>
+          </div>
+          <div class="card-body">
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Separates pushing/pulling from squatting/hinging. Maximises intensity on compound lifts with ample nervous system recovery.</p>
+            <table class="table schedule-table mb-0">
+              <thead><tr><th>Day</th><th>Workout</th><th>Primary Focus</th></tr></thead>
+              <tbody>
+                <tr><td><span class="day-pill">Mon</span></td><td>Upper A</td><td>Heavy Bench &amp; Horizontal Pull</td></tr>
+                <tr><td><span class="day-pill">Tue</span></td><td>Lower A</td><td>Barbell Squats &amp; Quad Focus</td></tr>
+                <tr><td><span class="day-pill day-rest">Wed</span></td><td colspan="2" style="color:var(--muted);">Rest – CNS Recovery</td></tr>
+                <tr><td><span class="day-pill">Thu</span></td><td>Upper B</td><td>Overhead Press &amp; Vertical Pull</td></tr>
+                <tr><td><span class="day-pill">Fri</span></td><td>Lower B</td><td>Deadlifts &amp; Hamstring Focus</td></tr>
+                <tr><td><span class="day-pill day-rest">Sat</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+                <tr><td><span class="day-pill day-rest">Sun</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: Full Body -->
+      <div class="col-md-4">
+        <div class="split-card card">
+          <div class="card-header">
+            <span class="split-tag">Time Efficiency</span>
+            <h3>3-Day Full Body</h3>
+            <small class="text-muted">3 days/week · High frequency</small>
+          </div>
+          <div class="card-body">
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">Best for busy schedules. Stimulates every muscle three times per week using high-yield compound movements only.</p>
+            <table class="table schedule-table mb-0">
+              <thead><tr><th>Day</th><th>Session</th><th>Core Exercises</th></tr></thead>
+              <tbody>
+                <tr><td><span class="day-pill">Mon</span></td><td>Full A</td><td>Squats · Bench · Lat Pulldown</td></tr>
+                <tr><td><span class="day-pill day-rest">Tue</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+                <tr><td><span class="day-pill">Wed</span></td><td>Full B</td><td>RDL · OHP · Barbell Row</td></tr>
+                <tr><td><span class="day-pill day-rest">Thu</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+                <tr><td><span class="day-pill">Fri</span></td><td>Full C</td><td>Leg Press · Inc. DB Press · Chin-ups</td></tr>
+                <tr><td><span class="day-pill day-rest">Sat</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+                <tr><td><span class="day-pill day-rest">Sun</span></td><td colspan="2" style="color:var(--muted);">Rest</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+  </div>
+</section>
+
+</body>
+</html>
