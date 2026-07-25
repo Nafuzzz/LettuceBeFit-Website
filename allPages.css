@@ -1,0 +1,95 @@
+/* ─── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --bg:         #1c1c1c;
+  --bg-card:    #252525;
+  --bg-section: #222222;
+  --border:     #2e2e2e;
+  --text:       #f2f2f2;
+  --accent:     #a1ea93;
+  --tab-active: #a1ea93;
+}
+
+/* ─── BASE OVERRIDES ─────────────────────────────────────── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ─── NAVBAR COLOR OVERRIDES ────────────────────────────── */
+.custom-navbar {
+  background-color: var(--bg) !important;
+  border-bottom: 1px solid var(--border);
+  
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.text-accent { 
+  color: var(--accent); 
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  color: var(--text) !important;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+  color: var(--accent) !important;
+}
+
+/* ─── BUTTON CUSTOMIZATION ───────────────────────────────── */
+/* Note: Ensure you apply class="btn btn-cta" in your HTML */
+.btn-cta {
+  background-color: var(--accent) !important;
+  color: var(--bg) !important;
+  font-weight: 700;
+  border: none;
+  padding: 0.45rem 1.2rem;
+}
+
+.btn-cta:hover {
+  background-color: #fff !important;
+  color: var(--bg) !important;
+  box-shadow: 0 0 12px rgba(161,234,147,0.45);
+  transform: translateY(-1px);
+}
+
+/* ─── SECTION HEADINGS ───────────────────────────────────── */
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.3rem;
+}
+
+/* ─── RESPONSIVE TWEAKS ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .sub-nav-wrapper .nav-pills { flex-wrap: nowrap; overflow-x: auto; }
+  .sub-nav-wrapper .nav-pills .nav-link { white-space: nowrap; font-size: 0.85rem; }
+}
+
+
+
