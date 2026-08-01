@@ -5,7 +5,7 @@
   --bg-section: #222222;
   --border:     #2e2e2e;
   --text:       #f2f2f2;
-  --accent:     #a1ea93;
+  --green:     #a1ea93;
 }
 
 /* ─── BASE OVERRIDES ─────────────────────────────────────── */
@@ -38,8 +38,8 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
-.text-accent { 
-  color: var(--accent); 
+.text-green { 
+  color: var(--green); 
 }
 
 .custom-navbar .navbar-nav .nav-link {
@@ -48,12 +48,12 @@ h1, h2, h3, h4 {
 
 .custom-navbar .navbar-nav .nav-link:hover,
 .custom-navbar .navbar-nav .nav-link.active {
-  color: var(--accent) !important;
+  color: var(--green) !important;
 }
 
 /* ─── BUTTON CUSTOMIZATION ───────────────────────────────── */
 .btn-cta {
-  background-color: var(--accent) !important;
+  background-color: var(--green) !important;
   color: var(--bg) !important;
   font-weight: 700;
   border: none;
@@ -74,7 +74,7 @@ h1, h2, h3, h4 {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--green);
   margin-bottom: 0.4rem;
 }
 

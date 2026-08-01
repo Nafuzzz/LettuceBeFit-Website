@@ -45,7 +45,7 @@
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--green);
       border: 1px solid rgba(161,234,147,0.35);
       border-radius: 30px;
       padding: 0.35rem 0.9rem;
@@ -56,8 +56,8 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
     }
 
     .hero h1 {
@@ -67,7 +67,7 @@
       max-width: 880px;
     }
 
-    .hero h1 .accent-line { color: var(--accent); }
+    .hero h1 .accent-line { color: var(--green); }
 
     .hero p.lead-copy {
       max-width: 540px;
@@ -90,7 +90,7 @@
       line-height: 1;
     }
 
-    .hero-stat .num span { color: var(--accent); }
+    .hero-stat .num span { color: var(--green); }
 
     .hero-stat .label {
       font-size: 0.72rem;
@@ -123,7 +123,7 @@
     }
 
     .pillar-card:hover {
-      border-color: var(--accent);
+      border-color: var(--green);
       transform: translateY(-4px);
     }
 
@@ -132,7 +132,7 @@
       height: 46px;
       border-radius: 8px;
       background: rgba(161,234,147,0.1);
-      color: var(--accent);
+      color: var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -165,7 +165,7 @@
       transition: color 0.2s, gap 0.2s;
     }
 
-    .pillar-link:hover { color: var(--accent); gap: 0.6rem; }
+    .pillar-link:hover { color: var(--green); gap: 0.6rem; }
 
     #goal-selector {
       padding: 4.5rem 0;
@@ -189,7 +189,7 @@
     }
 
     .goal-card:hover {
-      border-color: var(--accent);
+      border-color: var(--green);
       transform: translateY(-4px);
       background: #2a2a2a;
     }
@@ -200,7 +200,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--green);
       display: block;
       margin-bottom: 0.75rem;
     }
@@ -229,7 +229,7 @@
       transition: gap 0.2s, color 0.2s;
     }
 
-    .goal-card:hover .goal-cta { gap: 0.65rem; color: var(--accent); }
+    .goal-card:hover .goal-cta { gap: 0.65rem; color: var(--green); }
 
     .goal-card .goal-bg-icon {
       position: absolute;
@@ -261,7 +261,7 @@
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background: var(--accent-dim);
+      background: var(--dark-green);
       border: 2px solid var(--bg-card);
       margin-left: -8px;
       display: flex;
@@ -290,7 +290,7 @@
       flex-direction: column;
     }
 
-    .testimonial-card .stars { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.9rem; letter-spacing: 0.1em; }
+    .testimonial-card .stars { color: var(--green); font-size: 0.85rem; margin-bottom: 0.9rem; letter-spacing: 0.1em; }
 
     .testimonial-card .quote {
       font-size: 0.9rem;
@@ -312,7 +312,7 @@
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+      background: linear-gradient(135deg, var(--green), var(--dark-green));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -356,7 +356,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold text-uppercase" href="index.html">
-          <span class="text-accent">lettuce</span>befit
+          <span class="text-green">lettuce</span>befit
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -419,6 +419,11 @@
     <!-- ZONE 2: CORE PILLARS-->
     <section id="pillars">
       <div class="container goal-card text-center py-5">
+        
+        <p class="section-label">What You Get</p>
+        <h2 class="section-title">Workout Tools and Resources</h2>
+        <p class="text mb-5 mx-auto" style="max-width:560px;">Two tools, one
+          system. Built to take you from beginner to an optimised routine.</p>
         <div class="video-container">
           <iframe
             src="https://www.youtube.com/embed/Sc7LUjbKBHw?autoplay=1&si=XDiEYYq4J6A1Eysx"
@@ -427,10 +432,7 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen></iframe>
         </div>
-        <p class="section-label">What You Get</p>
-        <h2 class="section-title">Workout Tools and Resources</h2>
-        <p class="text mb-5 mx-auto" style="max-width:560px;">Two tools, one
-          system. Built to take you from beginner to an optimised routine.</p>
+        
 
         <div class="row g-4 justify-content-center text-start">
 
@@ -482,8 +484,8 @@
 
         <div class="row g-4">
           <div class="col-md-6">
-            <a href="workouts.html#splits" class="goal-card">
-              <span class="goal-tag">Aesthetic Path</span>
+            <a href="workouts.html#splits" class="goal-card" style="text-decoration: none;color: var(--text);">
+              <span style="color: var(--green);">Aesthetic Path</span>
               <h3>Build Muscle</h3>
               <p style="color: var(--text);">Higher rep ranges, shorter rest,
                 twice-weekly frequency. Maximise time under tension and total
@@ -493,8 +495,8 @@
           </div>
 
           <div class="col-md-6">
-            <a href="workouts.html#splits" class="goal-card">
-              <span class="goal-tag">Strength Path</span>
+            <a href="workouts.html#splits" class="goal-card" style="text-decoration: none;color: var(--text);">
+              <span style="color: var(--green);">Strength Path</span>
               <h3>Gain Absolute Strength</h3>
               <p style="color: var(--text);">Low reps, heavy loads, long rest
                 periods. Built around the big compound lifts that move the most
@@ -577,7 +579,7 @@
       <div class="container my-3">
         <div class="text-center mb-5">
           <p class="section-label"
-            style="color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Community Schedule</p>
+            style="color: var(--green); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Community Schedule</p>
           <h2 class="section-title text-uppercase display-6">Weekly Training
             Schedule</h2>
           <p class="mx-auto"
@@ -617,13 +619,13 @@
                   </div>
                 </td>
                 <td><span class="badge bg-dark border text-uppercase"
-                    style="border-color: rgba(161,234,147,0.3) !important; color: var(--accent) !important;">Upper
+                    style="border-color: rgba(161,234,147,0.3) !important; color: var(--green) !important;">Upper
                     Body</span></td>
                 <td style="color: var(--text);">Today, 18:30</td>
                 <td style="color: var(--text);">Marcus K.</td>
                 <td style="color: var(--text);">ActiveSG @ Ang Mo Kio</td>
                 <td class="pe-4 text-end"><span
-                    class="text-accent fw-semibold">Live In Progress</span></td>
+                    class="text-green fw-semibold">Live In Progress</span></td>
               </tr>
 
               <!-- Session 2 -->
@@ -682,7 +684,7 @@
 ═══════════════════════════════════════════════ -->
 <footer>
   <div class="container">
-    <p class="mb-1"><span style="color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit &copy; 2026</p>
+    <p class="mb-1"><span style="color:var(--green);font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit &copy; 2026</p>
     <p class="mb-0" style="font-size:0.75rem;">Always consult a qualified professional before starting a new training programme.</p>
   </div>
 </footer>
