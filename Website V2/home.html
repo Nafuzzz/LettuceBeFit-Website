@@ -17,8 +17,8 @@
     <link href="allPages.css" rel="stylesheet"/>
     
     <style>
-    /* HERO */
-    .hero {
+    /* landing */
+    .landing {
       background: 
         linear-gradient(rgba(17, 17, 17, 0.75), rgba(17, 17, 17, 0.85)), /* Dark tint for readable text */
         radial-gradient(ellipse 60% 50% at 80% 0%, rgba(161,234,147,0.08), transparent 70%),
@@ -36,7 +36,7 @@
       overflow: hidden;
     }
 
-    .hero-kicker {
+    .landing-kicker {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -52,7 +52,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .hero-kicker .dot {
+    .landing-kicker .dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -60,29 +60,29 @@
       box-shadow: 0 0 8px #a1ea93;
     }
 
-    .hero h1 {
+    .landing h1 {
       font-size: clamp(2.8rem, 6.2vw, 5.4rem);
       line-height: 0.98;
       margin-bottom: 1.25rem;
       max-width: 880px;
     }
 
-    .hero h1 .accent-line { color: #a1ea93; }
+    .landing h1 .accent-line { color: #a1ea93; }
 
-    .hero p.lead-copy {
+    .landing p.lead-copy {
       max-width: 540px;
       font-size: 1.05rem;
       margin-bottom: 2rem;
     }
 
-    .hero-stats {
+    .landing-stats {
       display: flex;
       gap: 2.5rem;
       margin-top: 3rem;
       flex-wrap: wrap;
     }
 
-    .hero-stat .num {
+    .landing-stat .num {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 2.1rem;
       font-weight: bold;
@@ -90,9 +90,9 @@
       line-height: 1;
     }
 
-    .hero-stat .num span { color: #a1ea93; }
+    .landing-stat .num span { color: #a1ea93; }
 
-    .hero-stat .label {
+    .landing-stat .label {
       font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -341,18 +341,10 @@
 
     .cta-band h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
     .cta-band p {  max-width: 480px; margin: 0 auto 2rem; }
-
-    
-
-    @media (max-width: 768px) {
-      .hero { padding: 4.5rem 0 3rem; text-align: left; }
-      .hero-stats { gap: 1.75rem; }
-      .goal-card .goal-bg-icon { width: 70px; }
-    }
   </style>
   </head>
   <body>
-    <!-- MAIN NAVBAR -->
+    <!-- main navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold text-uppercase" href="home.html">
@@ -377,12 +369,11 @@
         </div>
       </div>
     </nav>
-    <!-- HERO -->
-    <section class="hero">
+    <section class="landing">
       <div class="container">
         <div class="row">
           <div class="col-lg-9">
-            <span class="hero-kicker"><span class="dot"></span>Science-Backed
+            <span class="landing-kicker"><span class="dot"></span>Science-Backed
               Training System</span>
 
             <h1>BUILD YOUR IDEAL PHYSIQUE<br><span class="accent-line">WITH
@@ -392,21 +383,21 @@
 
             <div class="d-flex flex-wrap gap-3">
               <a href="join.html" class="btn btn-cta btn-lg">Join Us</a>
-              <a href="#pillars"
+              <a href="workouts.html"
                 class="btn btn-outline-light btn-lg ">Explore
                 Workouts</a>
             </div>
 
-            <div class="hero-stats">
-              <div class="hero-stat">
+            <div class="landing-stats">
+              <div class="landing-stat">
                 <div class="num"><span>120+</span></div>
                 <div class="label">Active Members</div>
               </div>
-              <div class="hero-stat">
+              <div class="landing-stat">
                 <div class="num"><span>40+</span></div>
                 <div class="label">Programmed Splits</div>
               </div>
-              <div class="hero-stat">
+              <div class="landing-stat">
                 <div class="num"><span>5</span></div>
                 <div class="label">Muscle Group Guides</div>
               </div>
@@ -416,7 +407,7 @@
       </div>
     </section>
 
-    <!-- CORE PILLARS-->
+    <!-- training library for easy navigation of our information and video to hook users used "pillars to represent columns(because used columns as a bootstrap)" -->
     <section id="pillars">
       <div class="container goal-card text-center py-5">
         
@@ -435,7 +426,7 @@
 
         <div class="row g-4 justify-content-center text-start">
 
-          <!-- Pillar 1 -->
+          <!--How to work out links to workouts-->
           <div class="col-md-4">
             <div class="pillar-card position-relative">
               <div class="pillar-icon">
@@ -452,7 +443,7 @@
             </div>
           </div>
 
-          <!-- Pillar 3 -->
+          <!-- How to diet properly links to calorie calculator -->
           <div class="col-md-4">
             <div class="pillar-card position-relative">
               <div class="pillar-icon">
@@ -471,7 +462,7 @@
         </div>
       </div>
     </section>
-    <!-- CHOOSE YOUR GOAL-->
+    <!-- Choose the goal to help user have a better workout experience -->
     <section id="goal-selector">
       <div class="container">
         <h2 class="header">Choose Your Goal</h2>
@@ -506,7 +497,7 @@
       </div>
     </section>
 
-    <!--  COMMUNITY  -->
+    <!--  Community -->
     <section id="community-teaser">
       <div class="container">
         <h2 class="header">You're Not Doing This Alone</h2>
@@ -570,7 +561,7 @@
         </div>
       </div>
     </section>
-    <!--   LIVE COMMUNITY SCHEDULE -->
+    <!--   Community Schedule -->
     <section id="schedule" class="py-5">
       <div class="container my-3">
         <div class="text-center mb-5">
@@ -604,13 +595,9 @@
               </tr>
             </thead>
             <tbody style="font-size: 0.9rem; border-color: #2e2e2e;">
-              <!-- Session 1 -->
               <tr>
                 <td class="ps-4 py-3 fw-semibold text-white">
-                  <div class="d-flex align-items-center ">
-                    
                     Personal Record Session
-                  </div>
                 </td>
                 <td><span class="badge bg-dark border text-uppercase"
                     style="border-color: rgba(161,234,147,0.3) !important; color: #a1ea93 !important;">Upper
@@ -622,7 +609,6 @@
                     class="text-green fw-semibold">Live In Progress</span></td>
               </tr>
 
-              <!-- Session 2 -->
               <tr>
                 <td class="ps-4 py-3 fw-semibold text-white">6 Packs</td>
                 <td><span
@@ -634,7 +620,6 @@
                   open</td>
               </tr>
 
-              <!-- Session 3 -->
               <tr>
                 <td class="ps-4 py-3 fw-semibold text-white">Dieting
                   Workshop</td>
@@ -645,8 +630,6 @@
                 <td>ActiveSG @ Ang Mo Kio</td>
                 <td class="pe-4 text-end">12 slots open</td>
               </tr>
-
-              <!-- Session 4 -->
               <tr>
                 <td class="ps-4 py-3 fw-semibold">Leg Day</td>
                 <td><span
