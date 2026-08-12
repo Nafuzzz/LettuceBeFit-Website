@@ -36,6 +36,10 @@
 
     .nav-link:hover { color: #a1ea93; }
 
+    @media (max-width: 768px) {
+      .sub-nav-wrapper .nav-pills { flex-wrap: nowrap; overflow-x: auto; }
+    }
+
     /* HERO */
     .hero {
       padding: 4rem 0 2.5rem;
@@ -147,6 +151,7 @@
       height: 100%;
       object-fit: cover;
     }
+
   </style>
 </head>
 <body>
@@ -155,7 +160,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold text-uppercase" href="home.html">
-      <span class="text-green">lettuce</span>befit
+      <span class="green-txt">lettuce</span>befit
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -167,7 +172,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
         <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
         <li class="nav-item"><a class="nav-link active" href="workouts.html">Workouts</a></li>
-        <li class="nav-item"><a class="nav-link" href="calorie-calc.html">Calorie Calculator</a></li>
+        <li class="nav-item"><a class="nav-link" href="cal-calc.html">Calorie Calculator</a></li>
       </ul>
         <a class="btn btn-cta" href="join.html">Join Us</a>
     </div>
@@ -210,25 +215,25 @@
             <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
           </thead>
           <tbody>
-            <tr><td>Bodybuilding (Hypertrophy)</td><td>2 - 3</td><td>3 - 4</td><td>8 - 12</td><td>60 - 90 sec</td></tr>
+            <tr><td>Bodybuilding </td><td>2 - 3</td><td>3 - 4</td><td>8 - 12</td><td>60 - 90 sec</td></tr>
             <tr><td>Power &amp; Strength</td><td>1 - 2</td><td>3 - 4</td><td>5 - 8</td><td>2 - 3 min</td></tr>
           </tbody>
         </table>
         </div>
 
     <!-- Tabs -->
-    <ul class="nav nav-tabs" id="bicepsTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#biceps-bb" type="button" role="tab">Bodybuilding</button>
+    <ul class="nav nav-tabs" id="bicepsTabs" >
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#biceps-bb" type="button">Bodybuilding</button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#biceps-str" type="button" role="tab">Power &amp; Strength</button>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#biceps-str" type="button">Power &amp; Strength</button>
       </li>
     </ul>
 
     <div class="tab-content">
 
-      <div class="tab-pane fade show active" id="biceps-bb" role="tabpanel">
+      <div class="tab-pane fade show active" id="biceps-bb" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -246,7 +251,7 @@
         </div>
       </div>
 
-      <div class="tab-pane fade" id="biceps-str" role="tabpanel">
+      <div class="tab-pane fade" id="biceps-str">
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -280,23 +285,23 @@
             <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
           </thead>
           <tbody>
-            <tr><td>Bodybuilding (Hypertrophy)</td><td>2 - 3</td><td>3 - 4</td><td>10 - 15</td><td>60 - 90 sec</td></tr>
+            <tr><td>Bodybuilding </td><td>2 - 3</td><td>3 - 4</td><td>10 - 15</td><td>60 - 90 sec</td></tr>
             <tr><td>Power &amp; Strength</td><td>1 - 2</td><td>4 - 5</td><td>5 - 8</td><td>2 - 3 min</td></tr>
           </tbody>
         </table>
         </div>
 
-    <ul class="nav nav-tabs" id="tricepsTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#triceps-bb" type="button" role="tab">Bodybuilding</button>
+    <ul class="nav nav-tabs" id="tricepsTabs">
+      <li class="nav-item" >
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#triceps-bb" type="button" >Bodybuilding</button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#triceps-str" type="button" role="tab">Power &amp; Strength</button>
+      <li class="nav-item" >
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#triceps-str" type="button" >Power &amp; Strength</button>
       </li>
     </ul>
 
     <div class="tab-content">
-      <div class="tab-pane fade show active" id="triceps-bb" role="tabpanel">
+      <div class="tab-pane fade show active" id="triceps-bb" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -313,7 +318,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="triceps-str" role="tabpanel">
+      <div class="tab-pane fade" id="triceps-str" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -345,23 +350,23 @@
             <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
           </thead>
           <tbody>
-            <tr><td>Bodybuilding (Hypertrophy)</td><td>3 - 4</td><td>3 - 4</td><td>8 - 12</td><td>90 sec</td></tr>
+            <tr><td>Bodybuilding </td><td>3 - 4</td><td>3 - 4</td><td>8 - 12</td><td>90 sec</td></tr>
             <tr><td>Power &amp; Strength</td><td>2 - 3</td><td>4 - 5</td><td>3 - 6</td><td>3 min</td></tr>
           </tbody>
         </table>
         </div>
 
-    <ul class="nav nav-tabs" id="backTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#back-bb" type="button" role="tab">Bodybuilding</button>
+    <ul class="nav nav-tabs" id="backTabs" >
+      <li class="nav-item" >
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#back-bb" type="button" >Bodybuilding</button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#back-str" type="button" role="tab">Power &amp; Strength</button>
+      <li class="nav-item" >
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#back-str" type="button" >Power &amp; Strength</button>
       </li>
     </ul>
 
     <div class="tab-content">
-      <div class="tab-pane fade show active" id="back-bb" role="tabpanel">
+      <div class="tab-pane fade show active" id="back-bb" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -378,7 +383,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="back-str" role="tabpanel">
+      <div class="tab-pane fade" id="back-str" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -410,23 +415,23 @@
             <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
           </thead>
           <tbody>
-            <tr><td>Bodybuilding (Hypertrophy)</td><td>3</td><td>3 - 4</td><td>10 - 15</td><td>60 - 90 sec</td></tr>
+            <tr><td>Bodybuilding </td><td>3</td><td>3 - 4</td><td>10 - 15</td><td>60 - 90 sec</td></tr>
             <tr><td>Power &amp; Strength</td><td>1 - 2</td><td>4 - 5</td><td>4 - 6</td><td>2 - 3 min</td></tr>
           </tbody>
         </table>
         </div>
 
-    <ul class="nav nav-tabs" id="shouldersTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#shoulders-bb" type="button" role="tab">Bodybuilding</button>
+    <ul class="nav nav-tabs" id="shouldersTabs" >
+      <li class="nav-item" >
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#shoulders-bb" type="button" >Bodybuilding</button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#shoulders-str" type="button" role="tab">Power &amp; Strength</button>
+      <li class="nav-item" >
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#shoulders-str" type="button" >Power &amp; Strength</button>
       </li>
     </ul>
 
     <div class="tab-content">
-      <div class="tab-pane fade show active" id="shoulders-bb" role="tabpanel">
+      <div class="tab-pane fade show active" id="shoulders-bb" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -443,7 +448,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="shoulders-str" role="tabpanel">
+      <div class="tab-pane fade" id="shoulders-str" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -475,23 +480,23 @@
             <tr><th>Goal</th><th>Exercises / Session</th><th>Sets</th><th>Target Reps</th><th>Rest</th></tr>
           </thead>
           <tbody>
-            <tr><td>Bodybuilding (Hypertrophy)</td><td>3 - 4</td><td>3 - 4</td><td>8 - 12</td><td>90 - 120 sec</td></tr>
+            <tr><td>Bodybuilding</td><td>3 - 4</td><td>3 - 4</td><td>8 - 12</td><td>90 - 120 sec</td></tr>
             <tr><td>Power &amp; Strength</td><td>2</td><td>4 - 6</td><td>3 - 5</td><td>3 min</td></tr>
           </tbody>
         </table>
         </div>
 
-    <ul class="nav nav-tabs" id="legsTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#legs-bb" type="button" role="tab">Bodybuilding</button>
+    <ul class="nav nav-tabs" id="legsTabs" >
+      <li class="nav-item" >
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#legs-bb" type="button" >Bodybuilding</button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#legs-str" type="button" role="tab">Power &amp; Strength</button>
+      <li class="nav-item" >
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#legs-str" type="button" >Power &amp; Strength</button>
       </li>
     </ul>
 
     <div class="tab-content">
-      <div class="tab-pane fade show active" id="legs-bb" role="tabpanel">
+      <div class="tab-pane fade show active" id="legs-bb" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -508,7 +513,7 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="legs-str" role="tabpanel">
+      <div class="tab-pane fade" id="legs-str" >
         <div class="row g-4">
           <div class="col-md-7">
             <div class="exercise-block">
@@ -528,11 +533,18 @@
     </div>
   </div>
 </section>
+<section class="cta-band">
+  <div class="container">
+    <h2>Pair Your Training With Proper Nutrition</h2>
+    <p>Calculate your daily targets and macros to fuel your workout split and optimize recovery.</p>
+    <a href="cal-calc.html" class="btn btn-cta btn-lg">Calculate Your Macros</a>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <p class="mb-1"><span class="text-green fw-bold">Lettuce</span>BeFit &copy; 2026</p>
+    <p class="mb-1"><span class="green-txt fw-bold">Lettuce</span>BeFit &copy; 2026</p>
     <p class="mb-0" style="font-size: 12px;">Always consult a qualified professional before starting a new training programme.</p>
   </div>
 </footer>
