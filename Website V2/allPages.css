@@ -50,10 +50,7 @@ h1, h2, h3, h4 {
 }
 
 .btn-cta:hover {
-  background-color: #fff !important;
-  color: #1c1c1c !important;
-  box-shadow: 0 0 12px rgba(161,234,147,0.45);
-  transform: translateY(-1px);
+  opacity: 0.5;
 }
 
 /* SECTION */
