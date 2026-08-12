@@ -28,9 +28,8 @@ function calorieCalc() {
 
 
   ans.innerHTML = `
-    <p style="margin: 0 0 6px 0;">Maintenance Calories (TDEE):</p>
+    <p style="margin: 0 0 6px 0;">Maintenance Calories:</p>
     <div class="ans-value">${tdee} kcal/day</div>
-    <hr style="border: 0; border-top: 1px solid var(--border); margin: 12px 0;">
     <p style="margin: 4px 0;"><strong>Weight Loss:</strong> ${weightLoss} kcal/day (-0.5 kg/wk)</p>
     <p style="margin: 4px 0;"><strong>Weight Gain:</strong> ${weightGain} kcal/day (+0.5 kg/wk)</p>
   `;
