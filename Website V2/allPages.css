@@ -68,11 +68,7 @@ footer {
   font-size: 0.8rem;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .sub-nav-wrapper .nav-pills { flex-wrap: nowrap; overflow-x: auto; }
-  .sub-nav-wrapper .nav-pills .nav-link { white-space: nowrap; font-size: 0.85rem; }
-}
+
 
 
 
