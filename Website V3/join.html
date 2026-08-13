@@ -15,14 +15,19 @@
       rel="stylesheet" />
     <!-- External CSS -->
     <link href="allPages.css" rel="stylesheet"/>
+    <!-- Bootstrap Bundle JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
     <style>
       body {
         overflow-x: hidden;
       }
 
+    /* FORM & COMPONENT STYLING  */
     .form-container-box {
-      background: #252525;
-      border: 1px solid #2e2e2e;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 3rem 2.5rem;
       box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -30,24 +35,24 @@
 
     .form-control, .form-select {
       background-color: #1a1a1a !important;
-      border: 1px solid #2e2e2e !important;
-      color: #f2f2f2 !important;
+      border: 1px solid var(--border) !important;
+      color: var(--text) !important;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .form-control:focus, .form-select:focus {
-      border-color: #a1ea93 !important;
+      border-color: var(--green) !important;
       box-shadow: 0 0 8px rgba(161,234,147,0.2) !important;
     }
 
     .form-check-input {
       background-color: #1a1a1a;
-      border: 1px solid #2e2e2e;
+      border: 1px solid var(--border);
     }
 
     .form-check-input:checked {
-      background-color: #a1ea93 !important;
-      border-color: #a1ea93 !important;
+      background-color: var(--green) !important;
+      border-color: var(--green) !important;
     }
 
     /*  RESPONSE PAGE STYLING */
@@ -60,27 +65,37 @@
 
     .data-summary-box {
       background: #1a1a1a;
-      border: 1px solid #2e2e2e;
+      border: 1px solid var(--border);
       border-radius: 6px;
       padding: 1.5rem;
     }
 
     .summary-item {
-      border-bottom: 1px solid #2e2e2e;
+      border-bottom: 1px solid var(--border);
       padding: 0.75rem 0;
     }
     .summary-item:last-child {
       border-bottom: none;
     }
 
+    /* Animation utility */
+    .fade-in-up {
+      animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
   </head>
   <body>
-<!-- main navbar-->
+
+    <!-- ZONE 0: MAIN NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold text-uppercase" href="home.html">
-          <span class="green-txt">lettuce</span>befit
+        <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+          <span class="text-green">lettuce</span>befit
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -90,14 +105,15 @@
 
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-            <li class="nav-item"><a class="nav-link active"
-                href="home.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link "
+            <li class="nav-item"><a class="nav-link"
+                href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link"
                 href="workouts.html">Workouts</a></li>
-            <li class="nav-item"><a class="nav-link" href="calorie-calc.html">Calorie
+            <li class="nav-item"><a class="nav-link"
+                href="calorie-calc.html">Calorie
                 Calculator</a></li>
           </ul>
-          <a class="btn btn-cta" href="join.html">Join Us</a>
+          <a class="btn btn-cta nav-link active" href="join.html">Join Us</a>
         </div>
       </div>
     </nav>
@@ -106,9 +122,10 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
 
-          <!-- form to indicate preference -->
+          <!-- ZONE 1: THE INPUT FORM  -->
           <section id="formSection" class="fade-in-up">
             <div class="text-center mb-4">
+              <p class="section-label">Account Setup</p>
               <h1 class="text-uppercase display-5 fw-bold">Create Your Athlete
                 Profile</h1>
               <p class="text mx-auto" style="max-width: 500px;">Choose your
@@ -139,7 +156,7 @@
                   </div>
                 </div>
 
-                <!-- Row 2: Priority of what users want -->
+                <!-- Row 2: Selector Menus -->
                 <div class="row g-3 mb-4">
                   <div class="col-md-6">
                     <label for="fitnessGoal"
@@ -147,11 +164,11 @@
                     <select class="form-select form-select-lg" id="fitnessGoal"
                       required>
                       <option value selected disabled>Choose path...</option>
-                      <option>Build
+                      <option value="Hypertrophy Block (Build Muscle)">Build
                         Muscle</option>
-                      <option>Gain
+                      <option value="Power & Strength Split (Gain Power)">Gain
                         Power</option>
-                      <option >Lose
+                      <option value="Body Recomposition (Lose Fat & Tone)">Lose
                         Fat & Tone</option>
                     </select>
                     <div class="invalid-feedback">Please select your primary
@@ -193,7 +210,7 @@
                   <div class="row g-2">
                     <div class="col-md-6">
                       <div class="form-check p-3 border rounded"
-                        style="border-color: #2e2e2e !important; background: #1a1a1a;">
+                        style="border-color: var(--border) !important; background: #1a1a1a;">
                         <input class="form-check-input ms-0 me-2"
                           type="checkbox" 
                           value="Heavy Compound Power Hour" id="sess1" />
@@ -203,7 +220,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-check p-3 border rounded"
-                        style="border-color: #2e2e2e !important; background: #1a1a1a;">
+                        style="border-color: var(--border) !important; background: #1a1a1a;">
                         <input class="form-check-input ms-0 me-2"
                           type="checkbox" 
                           value="Hypertrophy Pacing Audit" id="sess2" />
@@ -221,20 +238,19 @@
               </form>
             </div>
           </section>
-          <!-- After submission -->
+          <!-- ZONE 2: THE RESPONSE PAGE VIEW -->
           <section id="responseSection" class="d-none fade-in-up">
             <div class="response-card text-center">
               <div class="mb-3">
-                <!-- tick icon -->
                 <svg width="64" height="64" viewBox="0 0 24 24" fill="none"
-                  stroke="#a1ea93" stroke-width="2" stroke-linecap="round"
+                  stroke="var(--green)" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
               </div>
 
-              <h2 class="text-uppercase display-6 green-txt mb-2">Profile Created!</h2>
+              <h2 class="text-uppercase display-6 text-green mb-2">Profile Created!</h2>
               <p class="text mb-4">
                 Your profile has been created using this email: <br>
                 <strong id="dispatchedEmail" class="text-white"></strong>
@@ -248,7 +264,7 @@
                 </div>
                 <div class="summary-item d-flex justify-content-between">
                   <span class="text fw-medium">Assigned Plan:</span>
-                  <span id="resGoal" class="green-txt fw-semibold"></span>
+                  <span id="resGoal" class="text-green fw-semibold"></span>
                 </div>
                 <div class="summary-item d-flex justify-content-between">
                   <span class="text fw-medium">Experience Level:</span>
@@ -269,6 +285,7 @@
                   <h4 class="text-white mb-0 text-uppercase fw-bold"
                     style="letter-spacing: 0.05em;">Instant Join </h4>
                 </div>
+                <!-- Insert your actual Discord invite link in the href below -->
                 <a href="https://discord.gg/2Jd53vp8ZU" target="_blank"
                   class="btn w-100 fw-bold text-white text-uppercase py-2"
                   style="background-color: #5865F2; border: none; font-size: 0.85rem; letter-spacing: 0.05em;">
@@ -277,9 +294,9 @@
               </div>
 
               <div class="d-flex justify-content-center gap-3">
-                <a href="home.html#schedule" class="btn btn-outline-light px-4"
-                  style="border-color: #2e2e2e;">Go to Live Schedule</a>
-                <a href="home.html" class="btn btn-cta px-4">Return to Home</a>
+                <a href="index.html#schedule" class="btn btn-outline-light px-4"
+                  style="border-color: var(--border);">Go to Live Schedule</a>
+                <a href="index.html" class="btn btn-cta px-4">Return to Home</a>
               </div>
             </div>
           </section>
@@ -288,21 +305,23 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
     <footer>
       <div class="container">
         <p class="mb-1"><span
-            style="color:#a1ea93;font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit
+            style="color:var(--green);font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit
           &copy; 2026</p>
         <p class="mb-0" style="font-size:0.75rem;">Always consult a qualified
           professional before starting a new training programme.</p>
       </div>
     </footer>
-    <!--  DOM FORM -->
+    <!--   ZONE 4: DOM FORM -->
     <script>
   // Handle form submission
   document.getElementById('joinForm').addEventListener('submit', function (event) {
-    // Stop Page from refreshing after submission
+    // Stop Page from refreshing
     event.preventDefault();
     
     const form = event.currentTarget;
