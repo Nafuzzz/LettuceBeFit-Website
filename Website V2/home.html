@@ -14,13 +14,13 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet" />
     <!-- External css -->
-    <link href="allPages.css" rel="stylesheet"/>
-    
+    <link href="allPages.css" rel="stylesheet" />
+
     <style>
-    /* HERO */
-    .hero {
+    
+    .landing {
       background: 
-        linear-gradient(rgba(17, 17, 17, 0.75), rgba(17, 17, 17, 0.85)), /* Dark tint for readable text */
+        linear-gradient(rgba(17, 17, 17, 0.75), rgba(17, 17, 17, 0.85)), 
         radial-gradient(ellipse 60% 50% at 80% 0%, rgba(161,234,147,0.08), transparent 70%),
         repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0 2px, transparent 2px 40px),
         url('images/fakejaydon.jpg'); 
@@ -36,7 +36,7 @@
       overflow: hidden;
     }
 
-    .hero-kicker {
+    .landing-kicker {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -52,7 +52,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .hero-kicker .dot {
+    .landing-kicker .dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -60,29 +60,29 @@
       box-shadow: 0 0 8px #a1ea93;
     }
 
-    .hero h1 {
+    .landing h1 {
       font-size: clamp(2.8rem, 6.2vw, 5.4rem);
       line-height: 0.98;
       margin-bottom: 1.25rem;
       max-width: 880px;
     }
 
-    .hero h1 .accent-line { color: #a1ea93; }
+    .landing h1 .accent-line { color: #a1ea93; }
 
-    .hero p.lead-copy {
+    .landing p.lead-copy {
       max-width: 540px;
       font-size: 1.05rem;
       margin-bottom: 2rem;
     }
 
-    .hero-stats {
+    .landing-stats {
       display: flex;
       gap: 2.5rem;
       margin-top: 3rem;
       flex-wrap: wrap;
     }
 
-    .hero-stat .num {
+    .landing-stat .num {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 2.1rem;
       font-weight: bold;
@@ -90,9 +90,9 @@
       line-height: 1;
     }
 
-    .hero-stat .num span { color: #a1ea93; }
+    .landing-stat .num span { color: #a1ea93; }
 
-    .hero-stat .label {
+    .landing-stat .label {
       font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -109,6 +109,16 @@
       width: 100%;
       height: 100%;
     }
+    .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a1ea93; 
+    margin-bottom: 7px;
+  }
+
     #pillars { padding: 4.5rem 0; }
 
     .pillar-card {
@@ -333,7 +343,7 @@
       font-size: 0.72rem;
     }
 
-    .final-cta {
+     .final-cta {
       padding: 4rem 0;
       text-align: center;
       border-top: 1px solid #2e2e2e;
@@ -341,18 +351,10 @@
 
     .final-cta h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
     .final-cta p {  max-width: 480px; margin: 0 auto 2rem; }
-
-    
-
-    @media (max-width: 768px) {
-      .hero { padding: 4.5rem 0 3rem; text-align: left; }
-      .hero-stats { gap: 1.75rem; }
-      .goal-card .goal-bg-icon { width: 70px; }
-    }
   </style>
   </head>
   <body>
-    <!-- MAIN NAVBAR -->
+    <!-- main navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold text-uppercase" href="home.html">
@@ -370,43 +372,44 @@
                 href="home.html">Home</a></li>
             <li class="nav-item"><a class="nav-link "
                 href="workouts.html">Workouts</a></li>
-            <li class="nav-item"><a class="nav-link" href="cal-calc.html">Calorie
+            <li class="nav-item"><a class="nav-link"
+                href="cal-calc.html">Calorie
                 Calculator</a></li>
           </ul>
           <a class="btn btn-cta" href="join.html">Join Us</a>
         </div>
       </div>
     </nav>
-    <!-- HERO -->
-    <section class="hero">
+    <section class="landing">
       <div class="container">
         <div class="row">
           <div class="col-lg-9">
-            <span class="hero-kicker"><span class="dot"></span>Science-Backed
+            <span class="landing-kicker"><span class="dot"></span>Science-Backed
               Training System</span>
 
             <h1>BUILD YOUR IDEAL PHYSIQUE<br><span class="accent-line">WITH
                 SCIENCE.</span></h1>
             <p class="lead-copy">Structured splits, dialed-in macros, and a
-              library built on volume and exercise selection that actually works.</p>
+              library built on volume and exercise selection that actually
+              works.</p>
 
             <div class="d-flex flex-wrap gap-3">
               <a href="join.html" class="btn btn-cta btn-lg">Join Us</a>
-              <a href="#pillars"
+              <a href="workouts.html"
                 class="btn btn-outline-light btn-lg ">Explore
                 Workouts</a>
             </div>
 
-            <div class="hero-stats">
-              <div class="hero-stat">
+            <div class="landing-stats">
+              <div class="landing-stat">
                 <div class="num"><span>120+</span></div>
                 <div class="label">Active Members</div>
               </div>
-              <div class="hero-stat">
+              <div class="landing-stat">
                 <div class="num"><span>40+</span></div>
                 <div class="label">Programmed Splits</div>
               </div>
-              <div class="hero-stat">
+              <div class="landing-stat">
                 <div class="num"><span>5</span></div>
                 <div class="label">Muscle Group Guides</div>
               </div>
@@ -416,10 +419,10 @@
       </div>
     </section>
 
-    <!-- CORE PILLARS-->
+    <!-- training library for easy navigation of our information and video to hook users used "pillars to represent columns(because used columns as a bootstrap)" -->
     <section id="pillars">
       <div class="container goal-card text-center py-5">
-        
+        <p class="section-label" >What You Get</p>
         <h2 class="header">Workout Tools and Resources</h2>
         <p class="text mb-5 mx-auto" style="max-width:560px;">Two tools, one
           system. Built to take you from beginner to an optimised routine.</p>
@@ -431,11 +434,10 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen></iframe>
         </div>
-        
 
         <div class="row g-4 justify-content-center text-start">
 
-          <!-- Pillar 1 -->
+          <!--How to work out links to workouts-->
           <div class="col-md-4">
             <div class="pillar-card position-relative">
               <div class="pillar-icon">
@@ -452,7 +454,7 @@
             </div>
           </div>
 
-          <!-- Pillar 3 -->
+          <!-- How to diet properly links to calorie calculator -->
           <div class="col-md-4">
             <div class="pillar-card position-relative">
               <div class="pillar-icon">
@@ -463,7 +465,7 @@
               </div>
               <h3>Calorie Calculator</h3>
               <p>An interactive tool that dials in your daily macros from your
-                stats and goal — bulk or cut  in under a minute.</p>
+                stats and goal — bulk or cut in under a minute.</p>
               <a href="cal-calc.html"
                 class="pillar-link stretched-link">Open Planner &rarr;</a>
             </div>
@@ -471,9 +473,10 @@
         </div>
       </div>
     </section>
-    <!-- CHOOSE YOUR GOAL-->
+    <!-- Choose the goal to help user have a better workout experience -->
     <section id="goal-selector">
       <div class="container">
+        <p class="section-label">Start Here</p>
         <h2 class="header">Choose Your Goal</h2>
         <p style="max-width:560px;">Two paths, two completely different training
           outcomes.<br /> Pick the one that matches what you're chasing right
@@ -481,7 +484,8 @@
 
         <div class="row g-4">
           <div class="col-md-6">
-            <a href="workouts.html#splits" class="goal-card" style="text-decoration: none;color: #f2f2f2;">
+            <a href="workouts.html#splits" class="goal-card"
+              style="text-decoration: none;color: #f2f2f2;">
               <span style="color: #a1ea93;">Aesthetic Path</span>
               <h3>Build Muscle</h3>
               <p style="color: #f2f2f2;">Higher rep ranges, shorter rest,
@@ -492,7 +496,8 @@
           </div>
 
           <div class="col-md-6">
-            <a href="workouts.html#splits" class="goal-card" style="text-decoration: none;color: #f2f2f2;">
+            <a href="workouts.html#splits" class="goal-card"
+              style="text-decoration: none;color: #f2f2f2;">
               <span style="color: #a1ea93;">Strength Path</span>
               <h3>Gain Absolute Strength</h3>
               <p style="color: #f2f2f2;">Low reps, heavy loads, long rest
@@ -506,9 +511,10 @@
       </div>
     </section>
 
-    <!--  COMMUNITY  -->
+    <!--  Community -->
     <section id="community-teaser">
       <div class="container">
+        <p class="section-label">Community</p>
         <h2 class="header">You're Not Doing This Alone</h2>
 
         <div class="member-count">
@@ -570,15 +576,19 @@
         </div>
       </div>
     </section>
-    <!--   LIVE COMMUNITY SCHEDULE -->
+    <!--   Community Schedule -->
     <section id="schedule" class="py-5">
       <div class="container my-3">
         <div class="text-center mb-5">
+          <p class="section-label"
+            style="color: var(--green); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Community
+            Schedule</p>
           <h2 class="header text-uppercase display-6">Weekly Training
             Schedule</h2>
           <p class="mx-auto"
             style="max-width:540px;">
-            View the available group training sessions and choose a suitable time.
+            View the available group training sessions and choose a suitable
+            time.
           </p>
         </div>
 
@@ -604,13 +614,9 @@
               </tr>
             </thead>
             <tbody style="font-size: 0.9rem; border-color: #2e2e2e;">
-              <!-- Session 1 -->
               <tr>
                 <td class="ps-4 py-3 fw-semibold text-white">
-                  <div class="d-flex align-items-center ">
-                    
-                    Personal Record Session
-                  </div>
+                  Personal Record Session
                 </td>
                 <td><span class="badge bg-dark border text-uppercase"
                     style="border-color: rgba(161,234,147,0.3) !important; color: #a1ea93 !important;">Upper
@@ -622,7 +628,6 @@
                     class="green-txt fw-semibold">Live In Progress</span></td>
               </tr>
 
-              <!-- Session 2 -->
               <tr>
                 <td class="ps-4 py-3 fw-semibold text-white">6 Packs</td>
                 <td><span
@@ -634,7 +639,6 @@
                   open</td>
               </tr>
 
-              <!-- Session 3 -->
               <tr>
                 <td class="ps-4 py-3 fw-semibold text-white">Dieting
                   Workshop</td>
@@ -645,8 +649,6 @@
                 <td>ActiveSG @ Ang Mo Kio</td>
                 <td class="pe-4 text-end">12 slots open</td>
               </tr>
-
-              <!-- Session 4 -->
               <tr>
                 <td class="ps-4 py-3 fw-semibold">Leg Day</td>
                 <td><span
@@ -674,14 +676,14 @@
     </section>
 
     <!-- FOOTER -->
-<footer>
-  <div class="container">
-    <p class="mb-1"><span style="color:#a1ea93;font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit &copy; 2026</p>
-    <p class="mb-0" style="font-size:0.75rem;">Always consult a qualified professional before starting a new training programme.</p>
-  </div>
-</footer>
-  <!-- Bootstrap JS -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <footer>
+      <div class="container">
+        <p class="mb-1"><span
+            style="color:#a1ea93;font-family:'Barlow Condensed',sans-serif;font-weight:800;">Lettuce</span>BeFit
+          &copy; 2026</p>
+        <p class="mb-0" style="font-size:0.75rem;">Always consult a qualified
+          professional before starting a new training programme.</p>
+      </div>
+    </footer>
   </body>
 </html>
